@@ -182,34 +182,33 @@ const createGiftOptions = () => {
     tempElement.querySelector(".btn-choose-gift-options").addEventListener("click", () => {
       const overlay = $("#gift-template-overlay");
 
+      // initialize saved values
+      if (cartNote && overlay) {
+        const giftData = JSON.parse(cartNote.val() || "{}");
+
+        if (giftData.hasOwnProperty("gift")) {
+          overlay.find(`input[value="${giftData.gift}"]`).attr("checked", true);
+        }
+
+        if (giftData.hasOwnProperty("giftFrom")) {
+          overlay.find('input[name="gift-message-inputFrom"]').val(giftData.giftFrom);
+        }
+
+        if (giftData.hasOwnProperty("giftTo")) {
+          overlay.find('input[name="gift-message-inputTo"]').val(giftData.giftTo);
+        }
+
+        if (giftData.hasOwnProperty("giftMessage")) {
+          overlay.find('textarea[name="gift-message-inputMessage"]').val(giftData.giftMessage);
+        }
+      }
+
       overlay.show();
     });
 
     cartSummaryHolder.prepend(tempElement);
   } else if (!cartSummaryHolder) {
     console.error("Couldn't create giftcard options");
-  }
-
-  // init previous value
-  if (cartNote && overlayTemplateHolder) {
-    const overlay = $("#gift-template-overlay");
-    const giftData = JSON.parse(cartNote.val() || "{}");
-
-    if (giftData.hasOwnProperty("gift")) {
-      overlay.find(`input[value="${giftData.gift}"]`).attr("checked", true);
-    }
-
-    if (giftData.hasOwnProperty("giftFrom")) {
-      overlay.find('input[name="gift-message-inputFrom"]').val(giftData.giftFrom);
-    }
-
-    if (giftData.hasOwnProperty("giftTo")) {
-      overlay.find('input[name="gift-message-inputTo"]').val(giftData.giftTo);
-    }
-
-    if (giftData.hasOwnProperty("giftMessage")) {
-      overlay.find('textarea[name="gift-message-inputMessage"]').val(giftData.giftMessage);
-    }
   }
 };
 
