@@ -4,7 +4,6 @@ const createGiftOptions = () => {
   const cartSummaryHolder = document.querySelector(".cart-template > .summary-template-holder");
   const giftTemplateHolder = document.querySelector("#gift-template-holder");
   const overlayTemplateHolder = document.querySelector("#gift-template-overlay");
-  const cartNote = $("#cart-note");
 
   if (body && !overlayTemplateHolder) {
     const overlayTemplate = `
@@ -129,6 +128,8 @@ const createGiftOptions = () => {
 
     // Save behavior
     tempElement.querySelector(".btn-select-gift-options").addEventListener("click", () => {
+      const cartNote = $("#cart-note");
+
       const overlay = $("#gift-template-overlay");
       const pendences = overlay.find(".input-group.warning");
 
@@ -181,6 +182,7 @@ const createGiftOptions = () => {
 
     tempElement.querySelector(".btn-choose-gift-options").addEventListener("click", () => {
       const overlay = $("#gift-template-overlay");
+      const cartNote = $("#cart-note");
 
       // initialize saved values
       if (cartNote && overlay) {
