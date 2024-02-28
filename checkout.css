@@ -38,7 +38,7 @@
 
 /* Opções de Presente - Overlay */
 body.js-vcustom-showNoteField .orderform-template .summary-note {
-  display: none !important;
+  /* display: none !important; */
 }
 
 .sr-only {
