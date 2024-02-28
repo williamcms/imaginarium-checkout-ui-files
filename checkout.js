@@ -146,6 +146,7 @@ const createGiftOptions = () => {
 
       if (pendences.length === 0) {
         cartNote.val(JSON.stringify(data));
+        cartNote.trigger("change");
 
         overlay.hide();
       } else {
@@ -192,7 +193,7 @@ const createGiftOptions = () => {
   // init previous value
   if (cartNote && overlayTemplateHolder) {
     const overlay = $("#gift-template-overlay");
-    const giftData = JSON.parse(cartNote.val());
+    const giftData = JSON.parse(cartNote.val() || "{}");
 
     if (giftData.hasOwnProperty("gift")) {
       overlay.find(`input[value="${giftData.gift}"]`).attr("checked", true);
