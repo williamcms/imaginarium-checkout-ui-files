@@ -116,7 +116,7 @@ const createGiftOptions = () => {
       });
     });
 
-    $(tempElement.querySelector("textarea")).keydown((e) => {
+    $(tempElement.querySelector("textarea")).on("keyup", (e) => {
       const MAX_CHAR = 400;
 
       const dataMessage = $(e.target).val();
@@ -202,6 +202,7 @@ const createGiftOptions = () => {
 
         if (giftData.hasOwnProperty("giftMessage")) {
           overlay.find('textarea[name="gift-message-inputMessage"]').val(giftData.giftMessage);
+          overlay.find('textarea[name="gift-message-inputMessage"]').trigger("keyup");
         }
       }
 
