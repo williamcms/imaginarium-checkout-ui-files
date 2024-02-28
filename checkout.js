@@ -1,4 +1,233 @@
-/* eslint-env jquery */
+// Opções de Presente
+const createGiftOptions = () => {
+  const body = document.querySelector("body");
+  const cartSummaryHolder = document.querySelector(".cart-template > .summary-template-holder");
+  const giftTemplateHolder = document.querySelector("#gift-template-holder");
+  const overlayTemplateHolder = document.querySelector("#gift-template-overlay");
+  const cartNote = $("#cart-note");
+
+  if (body && !overlayTemplateHolder) {
+    const overlayTemplate = `
+          <div class="gift-template-overlay" id="gift-template-overlay" style="display: none;">
+            <div class="gift-template-overlay-content">
+              <div class="row-fluid overlay-content-head">
+                <h3 class="gift-title">Opções de presente</h3>
+                <button class="close-overlay" title="Fechar Janela">
+                  <span aria-hidden="true">&times;</span>
+                  <span class="sr-only">Fechar Janela</span>
+                </button>
+              </div>
+
+              <div class="overlay-content-main">
+                <div class="gift-options">
+                  <div class="gift-options-text">
+                    Deseja enviar o presente embalado?
+                  </div>
+
+                  <div class="gift-options-buttons">
+                    <div class="gift-options-buttonsElement">
+                      <input type="radio" name="wrap-type" value="S" id="gift-wrapped" class="sr-only" checked="true" />
+                      <label for="gift-wrapped">Sim, quero embalado</label>
+                    </div>
+
+                    <div class="gift-options-buttonsElement">
+                      <input type="radio" name="wrap-type" value="D" id="gift-unwrapped" class="sr-only" />
+                      <label for="gift-unwrapped">Não, deixa comigo</label>
+                    </div>
+                  </div>
+
+                  <div class="gift-options-disclaimer">
+                    *As sacolas de presente virão dobradas no pedido para você embrulhar na sua casa
+                  </div>
+                </div>
+
+                <div class="overlay-content-separator"></div>
+
+                <div class="gift-message">
+                  <div class="form-group">
+                    <div class="input-group gift-message-inputFrom">
+                      <label for="gift-message-inputFrom">De</label>
+                      <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom" required />
+                    </div>
+                  </div>
+
+                  <div class="gift-message-area">
+                    <div class="gift-message-info">
+                      <div class="gift-message-title">Mensagem de presente</div>
+                      <div class="gift-message-details">
+                        <span class="char-count">400</span> caracteres
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="input-group gift-message-inputMessage">
+                          <textarea maxlength="400" rows="8" name="gift-message-inputMessage" id="gift-message-inputMessage" placeholder="Aproveite seu presente!" required></textarea>
+                      </div>
+
+                      <div class="input-group gift-message-inputTo">
+                        <label for="gift-message-inputTo">Para</label>
+                        <input type="text" name="gift-message-inputTo" id="gift-message-inputTo" required />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="clearfix pull-right cart-links">
+                <button type="button" id="cancel-gift-options" class="btn btn-large pull-left-margin btn-cancel-gift-options">
+                    <span class="btn-text">Cancelar</span>
+                </button>
+                
+                <button type="submit" id="select-gift-options" class="btn btn-large pull-left-margin btn-select-gift-options btn-success">
+                    <span class="btn-text">Salvar e continuar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = overlayTemplate;
+
+    // Close behavior
+    tempElement.querySelector(".gift-template-overlay").addEventListener("click", (e) => {
+      const overlay = $("#gift-template-overlay");
+      const target = $(e.target);
+
+      if (
+        target.hasClass("gift-template-overlay") ||
+        target.hasClass("close-overlay") ||
+        target.hasClass("btn-cancel-gift-options")
+      )
+        overlay.hide();
+    });
+
+    // Information field behavior
+    const inputFields = tempElement.querySelectorAll("input[type='text'], textarea");
+
+    inputFields.forEach((item) => {
+      const field = $(item);
+
+      field.blur(() => {
+        if (field.val().length === 0) {
+          field.parents(".input-group").addClass("warning");
+        } else {
+          field.parents(".input-group").removeClass("warning");
+        }
+      });
+    });
+
+    $(tempElement.querySelector("textarea")).keydown((e) => {
+      const MAX_CHAR = 400;
+
+      const dataMessage = $(e.target).val();
+
+      const _char = $(tempElement.querySelector(".gift-message-info .char-count"));
+
+      _char.text(MAX_CHAR - dataMessage.length);
+    });
+
+    // Save behavior
+    tempElement.querySelector(".btn-select-gift-options").addEventListener("click", () => {
+      const overlay = $("#gift-template-overlay");
+      const pendences = overlay.find(".input-group.warning");
+
+      const gift = overlay.find('input[name="wrap-type"]:checked').val() ?? "N";
+      const giftFrom = overlay.find('input[name="gift-message-inputFrom"]').val() ?? "";
+      const giftTo = overlay.find('input[name="gift-message-inputTo"]').val() ?? "";
+      const giftMessage = overlay.find('textarea[name="gift-message-inputMessage"]').val() ?? "";
+
+      const data = {
+        gift,
+        giftFrom,
+        giftTo,
+        giftMessage,
+      };
+
+      if (pendences.length === 0) {
+        cartNote.val(JSON.stringify(data));
+
+        overlay.hide();
+      } else {
+        console.error("Missing data");
+      }
+    });
+
+    body.prepend(tempElement);
+  } else if (!cartSummaryHolder) {
+    console.error("Couldn't create giftcard overlay");
+  }
+
+  if (cartSummaryHolder && !giftTemplateHolder) {
+    const giftTemplate = `
+          <div class="gift-template-holder" id="gift-template-holder">
+              <div class="row-fluid summary">
+                <label class="gift-text">
+                  Que tal mandar um presente com uma embalagem e um cartão todo especial?
+                </label>
+              </div>
+              <div class="clearfix pull-right cart-links">
+                  <button type="submit" id="choose-gift-options" class="btn btn-large pull-left-margin btn-choose-gift-options">
+                      <span class="btn-icon"></span>
+                      <span class="btn-text">Esse pedido é um presente?</span>
+                  </button>
+              </div>
+          </div>
+      `;
+
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = giftTemplate;
+
+    tempElement.querySelector(".btn-choose-gift-options").addEventListener("click", () => {
+      const overlay = $("#gift-template-overlay");
+
+      overlay.show();
+    });
+
+    cartSummaryHolder.prepend(tempElement);
+  } else if (!cartSummaryHolder) {
+    console.error("Couldn't create giftcard options");
+  }
+
+  // init previous value
+  if (cartNote && overlayTemplateHolder) {
+    const overlay = $("#gift-template-overlay");
+    const giftData = JSON.parse(cartNote.val());
+
+    if (giftData.hasOwnProperty("gift")) {
+      overlay.find(`input[value="${giftData.gift}"]`).attr("checked", true);
+    }
+
+    if (giftData.hasOwnProperty("giftFrom")) {
+      overlay.find('input[name="gift-message-inputFrom"]').val(giftData.giftFrom);
+    }
+
+    if (giftData.hasOwnProperty("giftTo")) {
+      overlay.find('input[name="gift-message-inputTo"]').val(giftData.giftTo);
+    }
+
+    if (giftData.hasOwnProperty("giftMessage")) {
+      overlay.find('textarea[name="gift-message-inputMessage"]').val(giftData.giftMessage);
+    }
+  }
+};
+
+// Check changes
+if (window.location.hash === "#/cart") {
+  createGiftOptions();
+}
+
+window.addEventListener("load", () => {
+  if (window.location.hash === "#/cart") {
+    createGiftOptions();
+  }
+});
+
+window.addEventListener("hashchange", () => {
+  if (window.location.hash === "#/cart") {
+    createGiftOptions();
+  }
+});
 
 // Metricaz dataLayer events
 // Payment methods
@@ -204,7 +433,7 @@ const GiftCardTodosCartoes = {
                 `<div class="valesUtilizados" style="display: block">
                   <span class="valesUtilizados__title">Vales utilizados</span>
                   <div class="valesUtilizados__list"></div>
-                  <div class="valesUtilizados__disclaimer"></div>
+                  <div class="valesUtilizados__disclaimer">Os vales que você aplicar serão utilizados como métodos de pagamento alternativos. Portanto, o valor do seu pedido será deduzido somente durante o processo de finalização da compra.</div>
                 </div>`
               );
 
@@ -397,7 +626,7 @@ $(window).on("orderFormUpdated.vtex", async (_, orderForm) => {
     const giftCard = orderForm.paymentData.giftCards;
     const totalGiftCards = orderForm.paymentData.giftCards.reduce((total, giftcard) => total + giftcard.value, 0);
 
-    // Remove existing content to prevent outdated values
+    // Removes existing content to prevent outdated values
     $(".discount-giftcard-totalizers").remove();
 
     let totalizersHTML = "";
@@ -424,9 +653,10 @@ $(window).on("orderFormUpdated.vtex", async (_, orderForm) => {
       `;
     });
 
-    $(".cart-template.mini-cart .totalizers-list").after(
-      `<tbody class="discount-giftcard-totalizers">${totalizersHTML}</tbody>`
-    );
+    totalizersHTML &&
+      $(".cart-template.mini-cart .totalizers-list").after(
+        `<tbody class="discount-giftcard-totalizers">${totalizersHTML}</tbody>`
+      );
 
     var interval = setInterval(() => {
       const totalizer = $(".cart-template.mini-cart.span4 tfoot .monetary").first();
