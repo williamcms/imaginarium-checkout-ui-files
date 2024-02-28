@@ -1,0 +1,1033 @@
+/* PicPay PROMO 05% OFF - Indefinido */
+[data-name="PicPay"] > span:after {
+  position: absolute;
+  top: 0.65rem;
+
+  content: "5%OFF";
+  font-family: Verdana;
+  font-weight: 600;
+  font-size: 11px !important;
+  background-color: #22c25f;
+  color: #fff;
+  padding: 0 0.5rem 0 1rem;
+  border-radius: 0.3rem;
+  margin-left: 0.5rem;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICAgIDxwYXRoIGQ9Ik0wLjE0NjQ0NiA0LjM1MzU1Qy0wLjA0ODgxNTcgNC4xNTgyOSAtMC4wNDg4MTU3IDMuODQxNzEgMC4xNDY0NDYgMy42NDY0NUMwLjM0MTcwOSAzLjQ1MTE4IDAuNjU4MjkxIDMuNDUxMTggMC44NTM1NTMgMy42NDY0NUwzLjUgNi4yOTNMMy41IDAuNUMzLjUgMC4yNDM1ODIgMy42OTMwMiAwLjAzMjI0NjUgMy45NDE2OSAwLjAwMzM2MzkxTDQgMy4wMTk5MmUtMDdDNC4yNzYxNCAyLjg5OTIxZS0wNyA0LjUgMC4yMjM4NTggNC41IDAuNUw0LjUgNi4yOTNMNy4xNDY0NSAzLjY0NjQ1QzcuMzI2NjkgMy40NjYyIDcuNjEwMyAzLjQ1MjM0IDcuODA2NDUgMy42MDQ4NUw3Ljg1MzU1IDMuNjQ2NDVDOC4wNDg4MiAzLjg0MTcxIDguMDQ4ODIgNC4xNTgyOSA3Ljg1MzU1IDQuMzUzNTVMNC4zNTM1NSA3Ljg1MzU1TDQuMzEyNzIgNy44OTAxNkM0LjMxMTI4IDcuODkxMzEgNC4zMDk4MyA3Ljg5MjQ2IDQuMzA4MzcgNy44OTM2MUM0LjMwNDkyIDcuODk2MzYgNC4zMDEzIDcuODk5MTIgNC4yOTc2NSA3LjkwMTgzQzQuMjg1NTYgNy45MTA3NSA0LjI3MzE0IDcuOTE5MTQgNC4yNjAzMyA3LjkyNjk3QzQuMjU0MzEgNy45MzA3IDQuMjQ4MiA3LjkzNDI1IDQuMjQyMDMgNy45Mzc2NkM0LjIzMjE1IDcuOTQzMSA0LjIyMTk1IDcuOTQ4MzEgNC4yMTE1NSA3Ljk1MzE3QzQuMjAzMDUgNy45NTcxNiA0LjE5NDQgNy45NjA5IDQuMTg1NjcgNy45NjQzOUM0LjE3NTc5IDcuOTY4MzQgNC4xNjU5IDcuOTcxOTQgNC4xNTU4NyA3Ljk3NTIzQzQuMTQ4NDMgNy45Nzc2NCA0LjE0MDczIDcuOTc5OTUgNC4xMzMgNy45ODIwOEM0LjEyMjIyIDcuOTg1MDggNC4xMTEzNyA3Ljk4NzY4IDQuMTAwNCA3Ljk4OTkyQzQuMDkxNjkgNy45OTE2NSA0LjA4Mjk3IDcuOTkzMTkgNC4wNzQyMyA3Ljk5NDQ5QzQuMDUwMTggNy45OTgxMiA0LjAyNTMxIDggNCA4TDQuMDQ0NjMgNy45OTgwMkM0LjAzMyA3Ljk5OTA1IDQuMDIxMzQgNy45OTk2OCA0LjAwOTY4IDcuOTk5OTFMNCA4QzMuOTk2OCA4IDMuOTkzNiA3Ljk5OTk3IDMuOTkwNDEgNy45OTk5MUMzLjk3ODk5IDcuOTk5NyAzLjk2NzE3IDcuOTk5MDcgMy45NTUzNyA3Ljk5ODAyQzMuOTQ1MDggNy45OTcxMiAzLjkzNTI1IDcuOTk1OTQgMy45MjU1MiA3Ljk5NDQ5QzMuOTE3MDMgNy45OTMxOSAzLjkwODMxIDcuOTkxNjUgMy44OTk2NCA3Ljk4OTg4QzMuODg4NjMgNy45ODc2OCAzLjg3Nzc4IDcuOTg1MDggMy44NjcwOCA3Ljk4MjE0QzMuODU5MjcgNy45Nzk5NSAzLjg1MTU3IDcuOTc3NjQgMy44NDM5MyA3Ljk3NTEzQzMuODM0MSA3Ljk3MTk0IDMuODI0MjEgNy45NjgzNCAzLjgxNDQ3IDcuOTY0NDVDMy44MDU2IDcuOTYwOSAzLjc5Njk1IDcuOTU3MTYgMy43ODgzOSA3Ljk1MzE2QzMuNzc4MDUgNy45NDgzMSAzLjc2Nzg1IDcuOTQzMSAzLjc1Nzg2IDcuOTM3NTZDMy43NTE4IDcuOTM0MjUgMy43NDU2OSA3LjkzMDcgMy43Mzk2NSA3LjkyN0MzLjcyNjg2IDcuOTE5MTQgMy43MTQ0MyA3LjkxMDc1IDMuNzAyNDIgNy45MDE4NEMzLjY4Mjg0IDcuODg3MzQgMy42NjQxNCA3Ljg3MTI1IDMuNjQ2NDUgNy44NTM1NUwzLjY5MTYyIDcuODkzNjFDMy42NzU3NyA3Ljg4MTE3IDMuNjYwNjggNy44Njc3OSAzLjY0NjQ1IDcuODUzNTVMMC4xNDY0NDYgNC4zNTM1NVoiIGZpbGw9IndoaXRlIj48L3BhdGg+DQogICAgPC9zdmc+);
+  background-repeat: no-repeat;
+  background-position: 0.3rem 50%;
+}
+
+/* PIX PROMO 3% OFF */
+[data-name="Pix"] > span:after {
+  position: absolute;
+  top: 0.65rem;
+
+  content: "3%OFF";
+  font-family: Verdana;
+  font-weight: 600;
+  font-size: 11px !important;
+  background-color: #3fb39f;
+  color: #fff;
+  padding: 0 0.5rem 0 1rem;
+  border-radius: 0.3rem;
+  margin-left: 0.5rem;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICAgIDxwYXRoIGQ9Ik0wLjE0NjQ0NiA0LjM1MzU1Qy0wLjA0ODgxNTcgNC4xNTgyOSAtMC4wNDg4MTU3IDMuODQxNzEgMC4xNDY0NDYgMy42NDY0NUMwLjM0MTcwOSAzLjQ1MTE4IDAuNjU4MjkxIDMuNDUxMTggMC44NTM1NTMgMy42NDY0NUwzLjUgNi4yOTNMMy41IDAuNUMzLjUgMC4yNDM1ODIgMy42OTMwMiAwLjAzMjI0NjUgMy45NDE2OSAwLjAwMzM2MzkxTDQgMy4wMTk5MmUtMDdDNC4yNzYxNCAyLjg5OTIxZS0wNyA0LjUgMC4yMjM4NTggNC41IDAuNUw0LjUgNi4yOTNMNy4xNDY0NSAzLjY0NjQ1QzcuMzI2NjkgMy40NjYyIDcuNjEwMyAzLjQ1MjM0IDcuODA2NDUgMy42MDQ4NUw3Ljg1MzU1IDMuNjQ2NDVDOC4wNDg4MiAzLjg0MTcxIDguMDQ4ODIgNC4xNTgyOSA3Ljg1MzU1IDQuMzUzNTVMNC4zNTM1NSA3Ljg1MzU1TDQuMzEyNzIgNy44OTAxNkM0LjMxMTI4IDcuODkxMzEgNC4zMDk4MyA3Ljg5MjQ2IDQuMzA4MzcgNy44OTM2MUM0LjMwNDkyIDcuODk2MzYgNC4zMDEzIDcuODk5MTIgNC4yOTc2NSA3LjkwMTgzQzQuMjg1NTYgNy45MTA3NSA0LjI3MzE0IDcuOTE5MTQgNC4yNjAzMyA3LjkyNjk3QzQuMjU0MzEgNy45MzA3IDQuMjQ4MiA3LjkzNDI1IDQuMjQyMDMgNy45Mzc2NkM0LjIzMjE1IDcuOTQzMSA0LjIyMTk1IDcuOTQ4MzEgNC4yMTE1NSA3Ljk1MzE3QzQuMjAzMDUgNy45NTcxNiA0LjE5NDQgNy45NjA5IDQuMTg1NjcgNy45NjQzOUM0LjE3NTc5IDcuOTY4MzQgNC4xNjU5IDcuOTcxOTQgNC4xNTU4NyA3Ljk3NTIzQzQuMTQ4NDMgNy45Nzc2NCA0LjE0MDczIDcuOTc5OTUgNC4xMzMgNy45ODIwOEM0LjEyMjIyIDcuOTg1MDggNC4xMTEzNyA3Ljk4NzY4IDQuMTAwNCA3Ljk4OTkyQzQuMDkxNjkgNy45OTE2NSA0LjA4Mjk3IDcuOTkzMTkgNC4wNzQyMyA3Ljk5NDQ5QzQuMDUwMTggNy45OTgxMiA0LjAyNTMxIDggNCA4TDQuMDQ0NjMgNy45OTgwMkM0LjAzMyA3Ljk5OTA1IDQuMDIxMzQgNy45OTk2OCA0LjAwOTY4IDcuOTk5OTFMNCA4QzMuOTk2OCA4IDMuOTkzNiA3Ljk5OTk3IDMuOTkwNDEgNy45OTk5MUMzLjk3ODk5IDcuOTk5NyAzLjk2NzE3IDcuOTk5MDcgMy45NTUzNyA3Ljk5ODAyQzMuOTQ1MDggNy45OTcxMiAzLjkzNTI1IDcuOTk1OTQgMy45MjU1MiA3Ljk5NDQ5QzMuOTE3MDMgNy45OTMxOSAzLjkwODMxIDcuOTkxNjUgMy44OTk2NCA3Ljk4OTg4QzMuODg4NjMgNy45ODc2OCAzLjg3Nzc4IDcuOTg1MDggMy44NjcwOCA3Ljk4MjE0QzMuODU5MjcgNy45Nzk5NSAzLjg1MTU3IDcuOTc3NjQgMy44NDM5MyA3Ljk3NTEzQzMuODM0MSA3Ljk3MTk0IDMuODI0MjEgNy45NjgzNCAzLjgxNDQ3IDcuOTY0NDVDMy44MDU2IDcuOTYwOSAzLjc5Njk1IDcuOTU3MTYgMy43ODgzOSA3Ljk1MzE2QzMuNzc4MDUgNy45NDgzMSAzLjc2Nzg1IDcuOTQzMSAzLjc1Nzg2IDcuOTM3NTZDMy43NTE4IDcuOTM0MjUgMy43NDU2OSA3LjkzMDcgMy43Mzk2NSA3LjkyN0MzLjcyNjg2IDcuOTE5MTQgMy43MTQ0MyA3LjkxMDc1IDMuNzAyNDIgNy45MDE4NEMzLjY4Mjg0IDcuODg3MzQgMy42NjQxNCA3Ljg3MTI1IDMuNjQ2NDUgNy44NTM1NUwzLjY5MTYyIDcuODkzNjFDMy42NzU3NyA3Ljg4MTE3IDMuNjYwNjggNy44Njc3OSAzLjY0NjQ1IDcuODUzNTVMMC4xNDY0NDYgNC4zNTM1NVoiIGZpbGw9IndoaXRlIj48L3BhdGg+DQogICAgPC9zdmc+);
+  background-repeat: no-repeat;
+  background-position: 0.3rem 50%;
+}
+
+/* Desativa a forma de pagamento TrocaCommerce */
+a#payment-group-custom204PaymentGroupPaymentGroup {
+  display: none !important;
+}
+
+/* Remove a margin da forma de pagamento TrocaCommerce */
+.orderform-template-holder #payment-data .v-custom-payment-item-wrap:nth-child(6) {
+  margin-bottom: 0;
+}
+
+/* Opções de pagamento */
+.orderform-template-holder #payment-data .v-custom-payment-item-wrap {
+  border-color: transparent;
+}
+
+.orderform-template-holder #payment-data .v-custom-payment-item-wrap:not(.active) .payment-group-item {
+  border: 1px solid #cbcbcb;
+}
+
+/* Desativa Embalagem de presente por serviço */
+.add-service-container {
+  display: none !important;
+}
+
+/* Ativa Embalagem de Presente por Anexo */
+.add-item-attachment-container,
+.table.cart-items tbody tr td .add-item-attachment-container {
+  display: block !important;
+}
+
+/* Remove itens que são exibidos por conta do Anexo */
+.clone-item-container,
+.clone-item-sep,
+hr.clone-item-sep + a.clone-item,
+.item-attachments-content > .item-attachments-item-fields > .item-attachment .item-attachment-value {
+  display: none !important;
+}
+
+/* Estilos para campo de Anexo incluido */
+.table.cart-items tbody tr.item-attachments-head,
+.table.cart-items tbody tr.item-attachments-content {
+  display: flex !important;
+  padding: 0 0.5rem;
+}
+
+.item-attachments-content {
+  align-items: center;
+}
+
+.item-attachments-content > .item-attachments-item-image {
+  display: none;
+}
+
+.item-attachments-content > .item-attachments-item-fields {
+  flex: 1 1 0px;
+}
+
+.item-attachments-content > .item-attachments-item-fields > .item-attachment {
+  margin: 0;
+}
+
+.table.cart-items tbody tr.product-item .product-name .brand .brand-name {
+  display: none;
+}
+
+/* Oculta opção de incluir CNPJ */
+fieldset.box-client-info-pj,
+.corporate-hide-link {
+  display: none !important;
+}
+
+.smarthint {
+  margin: 10px 0;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(https://laranjalimashoes.vtexassets.com/assets/vtex/assets-builder/imaginarium.store/1.1.11/fonts/Montserrat-Black.ttf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(https://laranjalimashoes.vtexassets.com/assets/vtex/assets-builder/imaginarium.store/1.1.11/fonts/Montserrat-ExtraBold.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(https://laranjalimashoes.vtexassets.com/assets/vtex/assets-builder/imaginarium.store/1.1.11/fonts/Montserrat-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(https://laranjalimashoes.vtexassets.com/assets/vtex/assets-builder/imaginarium.store/1.1.11/fonts/Montserrat-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(https://laranjalimashoes.vtexassets.com/assets/vtex/assets-builder/imaginarium.store/1.1.11/fonts/Montserrat-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(https://laranjalimashoes.vtexassets.com/assets/vtex/assets-builder/imaginarium.store/1.1.11/fonts/Montserrat-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(https://laranjalimashoes.vtexassets.com/assets/vtex/assets-builder/imaginarium.store/1.1.11/fonts/Montserrat-Light.ttf);
+  font-weight: 300;
+}
+
+.e-header {
+  display: block !important;
+  width: 100%;
+  margin: 0 auto 35px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .e-header {
+    border-top: 1px solid #dcdcdc;
+    margin: 0 auto;
+  }
+}
+
+.e-header .e-header-content {
+  padding: 36px 97px 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+@media screen and (max-width: 768px) {
+  .e-header .e-header-content {
+    padding: 28px 24px;
+  }
+}
+
+.e-header .e-header-content .e-link-comprar {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .e-header .e-header-content .e-link-comprar {
+    display: none;
+  }
+}
+
+.e-header .e-header-content .e-link-comprar::before {
+  content: "";
+  background: url("/arquivos/arrow-left-img-checkout.png") no-repeat center;
+  display: inline-flex;
+  width: 14px;
+  height: 12px;
+  padding-right: 10px;
+}
+
+.e-header .e-header-content .e-link-comprar a {
+  color: #000;
+  text-decoration: none;
+}
+
+.e-header .e-header-content .e-logo img {
+  width: 100%;
+  height: 100%;
+  max-width: 215px;
+  max-height: 42px;
+}
+
+@media screen and (max-width: 768px) {
+  .e-header .e-header-content .e-logo img {
+    width: 100%;
+    height: 100%;
+    max-width: 116px;
+    max-height: 23px;
+    display: block;
+  }
+}
+
+.e-header .e-header-content .e-ambiente-header {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .e-header .e-header-content .e-ambiente-header {
+    font-size: 11px;
+  }
+}
+
+.e-bar-container {
+  background-color: #f4f2f2;
+  width: 100%;
+  text-align: center;
+  padding: 75px 0 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .e-bar-container {
+    position: relative;
+    padding: 65px 30px 38px;
+    width: unset;
+  }
+}
+
+.e-bar-container .e-bar-container-text {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 25px;
+}
+
+.e-bar-container .e-bar-background {
+  width: 100%;
+  max-width: 698px;
+  height: 14px;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.e-bar-background .e-bar-background-interno {
+  width: 0;
+  height: 100%;
+  background-color: #4ad6be;
+  border-radius: 10px;
+}
+
+body.v-custom-step-profile .e-bar-background .e-bar-background-interno {
+  width: 33%;
+}
+
+body.v-custom-step-cart .e-bar-background .e-bar-background-interno {
+  width: 33%;
+}
+
+body.v-custom-step-cart .e-bar-background .e-bar-background-interno::before {
+  content: "Preparando sua sacolinha...";
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #000;
+  right: -100%;
+  position: relative;
+  top: -45px;
+}
+
+@media screen and (max-width: 768px) {
+  body.v-custom-step-cart .e-bar-background .e-bar-background-interno::before {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.v-custom-step-email .e-bar-background .e-bar-background-interno:before {
+    top: -61px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.v-custom-step-shipping .e-bar-background .e-bar-background-interno::before {
+    top: -61px !important;
+  }
+}
+
+body.v-custom-step-email .e-bar-background .e-bar-background-interno {
+  width: 33%;
+  border-radius: 10px;
+}
+
+body.v-custom-step-email .e-bar-background .e-bar-background-interno:before {
+  content: "Preparando sua sacolinha...";
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #000;
+  right: -100%;
+  position: relative;
+  top: -45px;
+}
+
+body.v-custom-step-shipping .e-bar-background .e-bar-background-interno {
+  width: 33%;
+  border-radius: 10px;
+}
+
+body.v-custom-step-shipping .e-bar-background .e-bar-background-interno {
+  width: 33%;
+  border-radius: 10px;
+}
+
+body.v-custom-step-shipping .e-bar-background .e-bar-background-interno::before {
+  content: "Preparando sua sacolinha...";
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #000;
+  position: relative;
+  left: 100%;
+  top: -45px;
+}
+
+body.v-custom-step-payment .e-bar-background .e-bar-background-interno {
+  width: 66%;
+  border-radius: 10px;
+}
+
+body.v-custom-step-payment .e-bar-background .e-bar-background-interno::before {
+  content: "Esse pedido é quase seu ...";
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #000;
+  left: 29%;
+  position: relative;
+  top: -45px;
+}
+
+.e-footer {
+  display: flex !important;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  border-top: 1px solid #dcdcdc;
+}
+
+.e-footer .e-footer__content {
+  max-width: 94rem;
+  padding: 36px 97px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .e-footer .e-footer__content {
+    display: block;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .e-footer .e-footer__content .e-footer__left {
+    display: block;
+    text-align: center;
+    padding: 30px 40px 0px;
+    border-bottom: 1px solid #dcdcdc;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .e-footer .e-footer__content .e-footer__left img {
+    margin: 30px 0 0 !important;
+  }
+}
+
+.e-footer .e-footer__content .e-footer__left p {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  color: #000;
+}
+
+.e-footer .e-footer__content .e-footer__left img {
+  width: 100%;
+  height: 100%;
+  max-width: 197px;
+  max-height: 121px;
+  margin: 43px 0 0 29px;
+}
+
+@media screen and (max-width: 768px) {
+  .e-footer .e-footer__content .e-footer__right {
+    display: block;
+    text-align: center;
+    padding: 30px 40px 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.v-custom-step-payment .e-bar-background .e-bar-background-interno::before {
+    top: -39px;
+  }
+}
+
+.e-footer .e-footer__content .e-footer__right p {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  color: #000;
+}
+
+.e-footer .e-footer__content .e-footer__right img {
+  width: 100%;
+  height: 100%;
+  max-width: 486px;
+  max-height: 152px;
+  margin-top: 20px;
+}
+
+.e-footer .e-footer__content .e-footer__right .img-mobile-footer {
+  display: none;
+}
+
+.e-footer__right .img-selos-footer-new {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .e-footer__right .img-selos-footer-new {
+    display: block;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .e-footer .e-footer__content .e-footer__right img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #ra-widget-reputation {
+    margin: 10px auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .e-footer .e-footer__content .e-footer__right .img-mobile-footer {
+    display: block !important;
+    max-width: 158px;
+    max-height: 412px;
+    width: 100%;
+    height: 100%;
+    margin: 30px auto 0 !important;
+  }
+}
+
+/* Estilização parte central*/
+
+.checkout-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.giftCard {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.giftCard .giftCard__container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.giftCard .giftCard__container span.openOptionsGiftCard {
+  background: linear-gradient(#f4f4f4, #f4f4f4) no-repeat;
+  background-size: 0;
+  width: 192px;
+  height: 56px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 0;
+  color: #000000;
+  font-weight: 600;
+  transition: 0.5s linear;
+  cursor: pointer;
+  border-bottom: 3px solid #4bb8ac;
+}
+.giftCard .giftCard__container span.openOptionsGiftCard.is-active {
+  border-radius: 5px 0 0 0px;
+  background-size: 100%;
+}
+.giftCard .giftCard__container .giftCard__options {
+  position: relative;
+  display: none;
+  background: linear-gradient(#f4f4f4, #f4f4f4) no-repeat;
+  background-size: 0;
+  width: 0;
+  height: 56px;
+  overflow: hidden;
+  padding: 24px 24px 10px 24px;
+}
+.giftCard .giftCard__container .giftCard__options.is-active {
+  display: block;
+  background-size: 100%;
+  width: calc(100% - 192px);
+  height: 100%;
+}
+.giftCard .giftCard__container .giftCard__options span.closeOptionsGiftCard {
+  position: absolute;
+  right: 27px;
+  top: 27px;
+  color: gray;
+  transform: rotate(45deg);
+  font-size: 24px;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .giftCard .giftCard__container .giftCard__options span.closeOptionsGiftCard {
+    top: 7px;
+    right: 15px;
+  }
+}
+.giftCard .giftCard__container .giftCard__options .radioButtonsContainer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.giftCard .giftCard__container .giftCard__options .radioButtonsContainer span.radio-span {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 22px;
+  width: 130px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.giftCard .giftCard__container .giftCard__options .radioButtonsContainer span.radio-span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #b6b6b6;
+  border-radius: 50%;
+}
+.giftCard .giftCard__container .giftCard__options .radioButtonsContainer span.radio-span.is-checked:after {
+  content: "";
+  position: absolute;
+  left: 4.5px;
+  top: 11px;
+  display: block;
+  width: 9px;
+  height: 9px;
+  background: #008cdf;
+  border-radius: 50%;
+}
+
+@keyframes openGiftCardOptions {
+  0% {
+    background-size: 0;
+    width: 0;
+    height: 56px;
+  }
+  40% {
+    background-size: 100%;
+    width: calc(100% - 192px);
+    height: 56px;
+  }
+  to {
+    background-size: 100%;
+    width: calc(100% - 192px);
+    height: 161px;
+  }
+}
+@keyframes slide {
+  0% {
+    background-size: 100%;
+    width: 100%;
+    height: 0;
+  }
+  to {
+    background-size: 100%;
+    width: 100%;
+    height: 300px;
+  }
+}
+.formContainer > .is-active {
+  display: block;
+}
+.formContainer > div:not(.is-active) {
+  display: none;
+}
+.formContainer > div > div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.formContainer > div .codeSection {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+.formContainer > div > div label {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.formContainer > div > div label input {
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.formContainer > div > div span {
+  width: 100%;
+  margin-top: 1rem;
+  grid-column: 1/-1;
+  margin: 1.25rem 0 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #423086;
+  height: 48px;
+  color: #423086;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.gift-card-section.form-step.box-default:not([data-bind*="specialGiftCardPaymentGroup-template"]) {
+  display: none !important;
+}
+
+div[data-form="cartao-presente"],
+div[data-form="vale-compra"] {
+  transition: 0.3s ease-out;
+}
+div[data-form="cartao-presente"] div span.is-active,
+div[data-form="vale-compra"] div span.is-active {
+  background: #6ab617;
+  border: 1px solid #6ab617;
+  color: #fff;
+}
+@media only screen and (max-width: 900px) {
+  .codeSection__removeBtn {
+    margin: 0 auto !important;
+  }
+  .giftCard .giftCard__container {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .giftCard .giftCard__container .giftCard__options.is-active,
+  .giftCard .giftCard__container span.openOptionsGiftCard {
+    width: 100%;
+  }
+  .formContainer > div > div {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .formContainer > div > div label {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .formContainer > div > div span {
+    margin: 10px auto 0;
+  }
+  .formContainer > div > div label {
+    width: 100%;
+  }
+  .formContainer > div > div input {
+    width: 100% !important;
+  }
+}
+.link.link-gift-card {
+  display: none !important;
+}
+.valesUtilizados {
+  margin-top: 30px;
+}
+span.valesUtilizados__title {
+  font-weight: 700;
+  color: #4d4d44;
+}
+div.valesUtilizados__disclaimer {
+  font-style: italic;
+  color: #666666;
+  text-align: center;
+  /* padding-top: 14px; */
+}
+.codeSection {
+  width: 100%;
+  background: #fff;
+  padding: 5px 15px;
+  margin-top: 10px;
+}
+.codeSection__code {
+  margin-right: 70px;
+}
+.codeSection__removeBtn {
+  margin-left: auto;
+  color: #008cdf;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+select.btn.btn-mini option:last-child {
+  display: none;
+}
+
+/* OpenCashback */
+/* External box for giftcard section */
+.gift-card-section {
+  display: flex;
+  background: #f4f4f4;
+  padding: 0;
+  margin-left: 0;
+  width: auto;
+  border-radius: 0px;
+  justify-content: center;
+  padding-top: 13px;
+  margin-bottom: 5px;
+}
+
+.gift-card-group:first-child {
+  margin: 0px;
+}
+
+/* giftcard vtex original title */
+.gift-card-provider {
+  display: none;
+}
+
+/* Cashback section without using some value */
+
+/* cashback amount */
+.payment-discoints-table .number,
+.gift-card-provider-group .number .muted {
+  font-weight: bold;
+  color: #000;
+  vertical-align: middle;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.payment-discoints-table .number {
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* helper text for cashback amount */
+.gift-card-provider-group-ocksaas .number::before {
+  content: "Cashback";
+}
+
+/* helper text for TrocaCommerce amount */
+.gift-card-provider-group-programa-de-fidelidade .number::before {
+  content: "Vale Troca";
+}
+
+/* ock icon */
+.opencashback-currency-icon {
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAzNCAzMyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMTYgMC4yNUMxMy43ODYxIDAuMjUgMTAuNjQ0MyAxLjIwMzA1IDcuOTcxOTkgMi45ODg2MkM1LjI5OTY5IDQuNzc0MTkgMy4yMTY4OSA3LjMxMjA5IDEuOTg2OTYgMTAuMjgxNEMwLjc1NzA0MSAxMy4yNTA3IDAuNDM1MjM3IDE2LjUxOCAxLjA2MjI1IDE5LjY3MDJDMS42ODkyNiAyMi44MjI0IDMuMjM2OTIgMjUuNzE3OSA1LjUwOTUyIDI3Ljk5MDVDNy43ODIxMyAzMC4yNjMxIDEwLjY3NzYgMzEuODEwNyAxMy44Mjk4IDMyLjQzNzhDMTYuOTgyIDMzLjA2NDggMjAuMjQ5MyAzMi43NDMgMjMuMjE4NiAzMS41MTNDMjYuMTg3OSAzMC4yODMxIDI4LjcyNTggMjguMjAwMyAzMC41MTE0IDI1LjUyOEMzMi4yOTcgMjIuODU1NyAzMy4yNSAxOS43MTM5IDMzLjI1IDE2LjVDMzMuMjQ1NSAxMi4xOTE2IDMxLjUzMTkgOC4wNjEwMiAyOC40ODU1IDUuMDE0NTRDMjUuNDM5IDEuOTY4MDYgMjEuMzA4NCAwLjI1NDU1IDE3IDAuMjVaTTE3IDMwLjI1QzE0LjI4MDUgMzAuMjUgMTEuNjIyMSAyOS40NDM2IDkuMzYwOTIgMjcuOTMyN0M3LjA5OTc0IDI2LjQyMTggNS4zMzczNyAyNC4yNzQ0IDQuMjk2NjYgMjEuNzYxOUMzLjI1NTk2IDE5LjI0OTQgMi45ODM2NiAxNi40ODQ3IDMuNTE0MjEgMTMuODE3NUM0LjA0NDc2IDExLjE1MDMgNS4zNTQzMiA4LjcwMDI1IDcuMjc3MjkgNi43NzcyOEM5LjIwMDI2IDQuODU0MzEgMTEuNjUwMyAzLjU0NDc1IDE0LjMxNzUgMy4wMTQyQzE2Ljk4NDggMi40ODM2NiAxOS43NDk0IDIuNzU1OTUgMjIuMjYxOSAzLjc5NjY2QzI0Ljc3NDQgNC44MzczNiAyNi45MjE4IDYuNTk5NzMgMjguNDMyNyA4Ljg2MDkxQzI5Ljk0MzYgMTEuMTIyMSAzMC43NSAxMy43ODA1IDMwLjc1IDE2LjVDMzAuNzQ1OSAyMC4xNDU1IDI5LjI5NTkgMjMuNjQwNCAyNi43MTgyIDI2LjIxODJDMjQuMTQwNCAyOC43OTU5IDIwLjY0NTUgMzAuMjQ1OSAxNyAzMC4yNVpNMjMuMjUgMTkuNjI1QzIzLjI1IDIwLjc4NTMgMjIuNzg5MSAyMS44OTgxIDIxLjk2ODYgMjIuNzE4NkMyMS4xNDgxIDIzLjUzOTEgMjAuMDM1MyAyNCAxOC44NzUgMjRIMTguMjVWMjUuMjVDMTguMjUgMjUuNTgxNSAxOC4xMTgzIDI1Ljg5OTUgMTcuODgzOSAyNi4xMzM5QzE3LjY0OTUgMjYuMzY4MyAxNy4zMzE1IDI2LjUgMTcgMjYuNUMxNi42Njg1IDI2LjUgMTYuMzUwNSAyNi4zNjgzIDE2LjExNjEgMjYuMTMzOUMxNS44ODE3IDI1Ljg5OTUgMTUuNzUgMjUuNTgxNSAxNS43NSAyNS4yNVYyNEgxMy4yNUMxMi45MTg1IDI0IDEyLjYwMDUgMjMuODY4MyAxMi4zNjYxIDIzLjYzMzlDMTIuMTMxNyAyMy4zOTk1IDEyIDIzLjA4MTUgMTIgMjIuNzVDMTIgMjIuNDE4NSAxMi4xMzE3IDIyLjEwMDUgMTIuMzY2MSAyMS44NjYxQzEyLjYwMDUgMjEuNjMxNyAxMi45MTg1IDIxLjUgMTMuMjUgMjEuNUgxOC44NzVDMTkuMzcyMyAyMS41IDE5Ljg0OTIgMjEuMzAyNSAyMC4yMDA4IDIwLjk1MDhDMjAuNTUyNSAyMC41OTkyIDIwLjc1IDIwLjEyMjMgMjAuNzUgMTkuNjI1QzIwLjc1IDE5LjEyNzcgMjAuNTUyNSAxOC42NTA4IDIwLjIwMDggMTguMjk5MkMxOS44NDkyIDE3Ljk0NzUgMTkuMzcyMyAxNy43NSAxOC44NzUgMTcuNzVIMTUuMTI1QzEzLjk2NDcgMTcuNzUgMTIuODUxOSAxNy4yODkxIDEyLjAzMTQgMTYuNDY4NkMxMS4yMTA5IDE1LjY0ODEgMTAuNzUgMTQuNTM1MyAxMC43NSAxMy4zNzVDMTAuNzUgMTIuMjE0NyAxMS4yMTA5IDExLjEwMTkgMTIuMDMxNCAxMC4yODE0QzEyLjg1MTkgOS40NjA5NCAxMy45NjQ3IDkgMTUuMTI1IDlIMTUuNzVWNy43NUMxNS43NSA3LjQxODQ4IDE1Ljg4MTcgNy4xMDA1NCAxNi4xMTYxIDYuODY2MTJDMTYuMzUwNSA2LjYzMTcgMTYuNjY4NSA2LjUgMTcgNi41QzE3LjMzMTUgNi41IDE3LjY0OTUgNi42MzE3IDE3Ljg4MzkgNi44NjYxMkMxOC4xMTgzIDcuMTAwNTQgMTguMjUgNy40MTg0OCAxOC4yNSA3Ljc1VjlIMjAuNzVDMjEuMDgxNSA5IDIxLjM5OTUgOS4xMzE3IDIxLjYzMzkgOS4zNjYxMkMyMS44NjgzIDkuNjAwNTQgMjIgOS45MTg0OCAyMiAxMC4yNUMyMiAxMC41ODE1IDIxLjg2ODMgMTAuODk5NSAyMS42MzM5IDExLjEzMzlDMjEuMzk5NSAxMS4zNjgzIDIxLjA4MTUgMTEuNSAyMC43NSAxMS41SDE1LjEyNUMxNC42Mjc3IDExLjUgMTQuMTUwOCAxMS42OTc1IDEzLjc5OTIgMTIuMDQ5MkMxMy40NDc2IDEyLjQwMDggMTMuMjUgMTIuODc3NyAxMy4yNSAxMy4zNzVDMTMuMjUgMTMuODcyMyAxMy40NDc2IDE0LjM0OTIgMTMuNzk5MiAxNC43MDA4QzE0LjE1MDggMTUuMDUyNSAxNC42Mjc3IDE1LjI1IDE1LjEyNSAxNS4yNUgxOC44NzVDMjAuMDM1MyAxNS4yNSAyMS4xNDgxIDE1LjcxMDkgMjEuOTY4NiAxNi41MzE0QzIyLjc4OTEgMTcuMzUxOSAyMy4yNSAxOC40NjQ3IDIzLjI1IDE5LjYyNVoiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+Cg==")
+    no-repeat center center;
+
+  width: 30px;
+  height: 30px;
+  background-color: #18202a;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 5px;
+  padding: 1px;
+  max-width: initial;
+}
+
+/*  use cashback button */
+.payment-discoints-table .action,
+.gift-card-provider-group-programa-de-fidelidade .action a {
+  color: #000;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+/* Cashback section using some value */
+
+.payment-discoints-table .number.flex {
+  display: table-cell;
+}
+
+span[data-bind*="text: availableLabel"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.partialValue .valueTitle {
+  color: #000;
+}
+
+.input-prepend .add-on:first-child {
+  background: #fff;
+  color: #000;
+  height: fit-content !important;
+  width: fit-content;
+  line-height: unset;
+  padding: 4px 5px;
+  border-radius: 0px;
+}
+
+.orderform-template-holder #payment-data input[type="text"]:not(.pac-target-input):not(.giftcard-services-input) {
+  height: fit-content;
+  line-height: unset;
+  color: #000;
+  padding: 4px 20px 4px 0px;
+}
+
+/* Customize checkout summary cashback accumulated */
+
+#ocb-total-cashback-payment .iconAndText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 8px;
+}
+
+#ocb-total-cashback-payment .icon {
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAzNCAzMyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMTYgMC4yNUMxMy43ODYxIDAuMjUgMTAuNjQ0MyAxLjIwMzA1IDcuOTcxOTkgMi45ODg2MkM1LjI5OTY5IDQuNzc0MTkgMy4yMTY4OSA3LjMxMjA5IDEuOTg2OTYgMTAuMjgxNEMwLjc1NzA0MSAxMy4yNTA3IDAuNDM1MjM3IDE2LjUxOCAxLjA2MjI1IDE5LjY3MDJDMS42ODkyNiAyMi44MjI0IDMuMjM2OTIgMjUuNzE3OSA1LjUwOTUyIDI3Ljk5MDVDNy43ODIxMyAzMC4yNjMxIDEwLjY3NzYgMzEuODEwNyAxMy44Mjk4IDMyLjQzNzhDMTYuOTgyIDMzLjA2NDggMjAuMjQ5MyAzMi43NDMgMjMuMjE4NiAzMS41MTNDMjYuMTg3OSAzMC4yODMxIDI4LjcyNTggMjguMjAwMyAzMC41MTE0IDI1LjUyOEMzMi4yOTcgMjIuODU1NyAzMy4yNSAxOS43MTM5IDMzLjI1IDE2LjVDMzMuMjQ1NSAxMi4xOTE2IDMxLjUzMTkgOC4wNjEwMiAyOC40ODU1IDUuMDE0NTRDMjUuNDM5IDEuOTY4MDYgMjEuMzA4NCAwLjI1NDU1IDE3IDAuMjVaTTE3IDMwLjI1QzE0LjI4MDUgMzAuMjUgMTEuNjIyMSAyOS40NDM2IDkuMzYwOTIgMjcuOTMyN0M3LjA5OTc0IDI2LjQyMTggNS4zMzczNyAyNC4yNzQ0IDQuMjk2NjYgMjEuNzYxOUMzLjI1NTk2IDE5LjI0OTQgMi45ODM2NiAxNi40ODQ3IDMuNTE0MjEgMTMuODE3NUM0LjA0NDc2IDExLjE1MDMgNS4zNTQzMiA4LjcwMDI1IDcuMjc3MjkgNi43NzcyOEM5LjIwMDI2IDQuODU0MzEgMTEuNjUwMyAzLjU0NDc1IDE0LjMxNzUgMy4wMTQyQzE2Ljk4NDggMi40ODM2NiAxOS43NDk0IDIuNzU1OTUgMjIuMjYxOSAzLjc5NjY2QzI0Ljc3NDQgNC44MzczNiAyNi45MjE4IDYuNTk5NzMgMjguNDMyNyA4Ljg2MDkxQzI5Ljk0MzYgMTEuMTIyMSAzMC43NSAxMy43ODA1IDMwLjc1IDE2LjVDMzAuNzQ1OSAyMC4xNDU1IDI5LjI5NTkgMjMuNjQwNCAyNi43MTgyIDI2LjIxODJDMjQuMTQwNCAyOC43OTU5IDIwLjY0NTUgMzAuMjQ1OSAxNyAzMC4yNVpNMjMuMjUgMTkuNjI1QzIzLjI1IDIwLjc4NTMgMjIuNzg5MSAyMS44OTgxIDIxLjk2ODYgMjIuNzE4NkMyMS4xNDgxIDIzLjUzOTEgMjAuMDM1MyAyNCAxOC44NzUgMjRIMTguMjVWMjUuMjVDMTguMjUgMjUuNTgxNSAxOC4xMTgzIDI1Ljg5OTUgMTcuODgzOSAyNi4xMzM5QzE3LjY0OTUgMjYuMzY4MyAxNy4zMzE1IDI2LjUgMTcgMjYuNUMxNi42Njg1IDI2LjUgMTYuMzUwNSAyNi4zNjgzIDE2LjExNjEgMjYuMTMzOUMxNS44ODE3IDI1Ljg5OTUgMTUuNzUgMjUuNTgxNSAxNS43NSAyNS4yNVYyNEgxMy4yNUMxMi45MTg1IDI0IDEyLjYwMDUgMjMuODY4MyAxMi4zNjYxIDIzLjYzMzlDMTIuMTMxNyAyMy4zOTk1IDEyIDIzLjA4MTUgMTIgMjIuNzVDMTIgMjIuNDE4NSAxMi4xMzE3IDIyLjEwMDUgMTIuMzY2MSAyMS44NjYxQzEyLjYwMDUgMjEuNjMxNyAxMi45MTg1IDIxLjUgMTMuMjUgMjEuNUgxOC44NzVDMTkuMzcyMyAyMS41IDE5Ljg0OTIgMjEuMzAyNSAyMC4yMDA4IDIwLjk1MDhDMjAuNTUyNSAyMC41OTkyIDIwLjc1IDIwLjEyMjMgMjAuNzUgMTkuNjI1QzIwLjc1IDE5LjEyNzcgMjAuNTUyNSAxOC42NTA4IDIwLjIwMDggMTguMjk5MkMxOS44NDkyIDE3Ljk0NzUgMTkuMzcyMyAxNy43NSAxOC44NzUgMTcuNzVIMTUuMTI1QzEzLjk2NDcgMTcuNzUgMTIuODUxOSAxNy4yODkxIDEyLjAzMTQgMTYuNDY4NkMxMS4yMTA5IDE1LjY0ODEgMTAuNzUgMTQuNTM1MyAxMC43NSAxMy4zNzVDMTAuNzUgMTIuMjE0NyAxMS4yMTA5IDExLjEwMTkgMTIuMDMxNCAxMC4yODE0QzEyLjg1MTkgOS40NjA5NCAxMy45NjQ3IDkgMTUuMTI1IDlIMTUuNzVWNy43NUMxNS43NSA3LjQxODQ4IDE1Ljg4MTcgNy4xMDA1NCAxNi4xMTYxIDYuODY2MTJDMTYuMzUwNSA2LjYzMTcgMTYuNjY4NSA2LjUgMTcgNi41QzE3LjMzMTUgNi41IDE3LjY0OTUgNi42MzE3IDE3Ljg4MzkgNi44NjYxMkMxOC4xMTgzIDcuMTAwNTQgMTguMjUgNy40MTg0OCAxOC4yNSA3Ljc1VjlIMjAuNzVDMjEuMDgxNSA5IDIxLjM5OTUgOS4xMzE3IDIxLjYzMzkgOS4zNjYxMkMyMS44NjgzIDkuNjAwNTQgMjIgOS45MTg0OCAyMiAxMC4yNUMyMiAxMC41ODE1IDIxLjg2ODMgMTAuODk5NSAyMS42MzM5IDExLjEzMzlDMjEuMzk5NSAxMS4zNjgzIDIxLjA4MTUgMTEuNSAyMC43NSAxMS41SDE1LjEyNUMxNC42Mjc3IDExLjUgMTQuMTUwOCAxMS42OTc1IDEzLjc5OTIgMTIuMDQ5MkMxMy40NDc2IDEyLjQwMDggMTMuMjUgMTIuODc3NyAxMy4yNSAxMy4zNzVDMTMuMjUgMTMuODcyMyAxMy40NDc2IDE0LjM0OTIgMTMuNzk5MiAxNC43MDA4QzE0LjE1MDggMTUuMDUyNSAxNC42Mjc3IDE1LjI1IDE1LjEyNSAxNS4yNUgxOC44NzVDMjAuMDM1MyAxNS4yNSAyMS4xNDgxIDE1LjcxMDkgMjEuOTY4NiAxNi41MzE0QzIyLjc4OTEgMTcuMzUxOSAyMy4yNSAxOC40NjQ3IDIzLjI1IDE5LjYyNVoiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+Cg==")
+    no-repeat center center;
+
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  background-color: #18202a;
+  border-radius: 50%;
+  margin-right: 8px;
+  padding: 1px;
+}
+
+#ocb-total-cashback-payment .text::before {
+  display: block;
+  content: "Cashback acumulado";
+  color: #000;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#ocb-total-cashback-payment .text::after {
+  content: "Para próxima compra";
+  color: grey;
+  font-size: 11px;
+  font-weight: lighter;
+}
+
+#ocb-total-cashback-payment .text {
+  text-align: right;
+  white-space: nowrap;
+}
+
+#ocb-total-cashback-applied-payment .info {
+  display: flex;
+  white-space: nowrap;
+  flex-direction: row-reverse;
+}
+
+/* customize items list on cart */
+
+.item-container {
+  background: #fff;
+  width: fit-content;
+  display: flex;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.item-icon {
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAzNCAzMyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMTYgMC4yNUMxMy43ODYxIDAuMjUgMTAuNjQ0MyAxLjIwMzA1IDcuOTcxOTkgMi45ODg2MkM1LjI5OTY5IDQuNzc0MTkgMy4yMTY4OSA3LjMxMjA5IDEuOTg2OTYgMTAuMjgxNEMwLjc1NzA0MSAxMy4yNTA3IDAuNDM1MjM3IDE2LjUxOCAxLjA2MjI1IDE5LjY3MDJDMS42ODkyNiAyMi44MjI0IDMuMjM2OTIgMjUuNzE3OSA1LjUwOTUyIDI3Ljk5MDVDNy43ODIxMyAzMC4yNjMxIDEwLjY3NzYgMzEuODEwNyAxMy44Mjk4IDMyLjQzNzhDMTYuOTgyIDMzLjA2NDggMjAuMjQ5MyAzMi43NDMgMjMuMjE4NiAzMS41MTNDMjYuMTg3OSAzMC4yODMxIDI4LjcyNTggMjguMjAwMyAzMC41MTE0IDI1LjUyOEMzMi4yOTcgMjIuODU1NyAzMy4yNSAxOS43MTM5IDMzLjI1IDE2LjVDMzMuMjQ1NSAxMi4xOTE2IDMxLjUzMTkgOC4wNjEwMiAyOC40ODU1IDUuMDE0NTRDMjUuNDM5IDEuOTY4MDYgMjEuMzA4NCAwLjI1NDU1IDE3IDAuMjVaTTE3IDMwLjI1QzE0LjI4MDUgMzAuMjUgMTEuNjIyMSAyOS40NDM2IDkuMzYwOTIgMjcuOTMyN0M3LjA5OTc0IDI2LjQyMTggNS4zMzczNyAyNC4yNzQ0IDQuMjk2NjYgMjEuNzYxOUMzLjI1NTk2IDE5LjI0OTQgMi45ODM2NiAxNi40ODQ3IDMuNTE0MjEgMTMuODE3NUM0LjA0NDc2IDExLjE1MDMgNS4zNTQzMiA4LjcwMDI1IDcuMjc3MjkgNi43NzcyOEM5LjIwMDI2IDQuODU0MzEgMTEuNjUwMyAzLjU0NDc1IDE0LjMxNzUgMy4wMTQyQzE2Ljk4NDggMi40ODM2NiAxOS43NDk0IDIuNzU1OTUgMjIuMjYxOSAzLjc5NjY2QzI0Ljc3NDQgNC44MzczNiAyNi45MjE4IDYuNTk5NzMgMjguNDMyNyA4Ljg2MDkxQzI5Ljk0MzYgMTEuMTIyMSAzMC43NSAxMy43ODA1IDMwLjc1IDE2LjVDMzAuNzQ1OSAyMC4xNDU1IDI5LjI5NTkgMjMuNjQwNCAyNi43MTgyIDI2LjIxODJDMjQuMTQwNCAyOC43OTU5IDIwLjY0NTUgMzAuMjQ1OSAxNyAzMC4yNVpNMjMuMjUgMTkuNjI1QzIzLjI1IDIwLjc4NTMgMjIuNzg5MSAyMS44OTgxIDIxLjk2ODYgMjIuNzE4NkMyMS4xNDgxIDIzLjUzOTEgMjAuMDM1MyAyNCAxOC44NzUgMjRIMTguMjVWMjUuMjVDMTguMjUgMjUuNTgxNSAxOC4xMTgzIDI1Ljg5OTUgMTcuODgzOSAyNi4xMzM5QzE3LjY0OTUgMjYuMzY4MyAxNy4zMzE1IDI2LjUgMTcgMjYuNUMxNi42Njg1IDI2LjUgMTYuMzUwNSAyNi4zNjgzIDE2LjExNjEgMjYuMTMzOUMxNS44ODE3IDI1Ljg5OTUgMTUuNzUgMjUuNTgxNSAxNS43NSAyNS4yNVYyNEgxMy4yNUMxMi45MTg1IDI0IDEyLjYwMDUgMjMuODY4MyAxMi4zNjYxIDIzLjYzMzlDMTIuMTMxNyAyMy4zOTk1IDEyIDIzLjA4MTUgMTIgMjIuNzVDMTIgMjIuNDE4NSAxMi4xMzE3IDIyLjEwMDUgMTIuMzY2MSAyMS44NjYxQzEyLjYwMDUgMjEuNjMxNyAxMi45MTg1IDIxLjUgMTMuMjUgMjEuNUgxOC44NzVDMTkuMzcyMyAyMS41IDE5Ljg0OTIgMjEuMzAyNSAyMC4yMDA4IDIwLjk1MDhDMjAuNTUyNSAyMC41OTkyIDIwLjc1IDIwLjEyMjMgMjAuNzUgMTkuNjI1QzIwLjc1IDE5LjEyNzcgMjAuNTUyNSAxOC42NTA4IDIwLjIwMDggMTguMjk5MkMxOS44NDkyIDE3Ljk0NzUgMTkuMzcyMyAxNy43NSAxOC44NzUgMTcuNzVIMTUuMTI1QzEzLjk2NDcgMTcuNzUgMTIuODUxOSAxNy4yODkxIDEyLjAzMTQgMTYuNDY4NkMxMS4yMTA5IDE1LjY0ODEgMTAuNzUgMTQuNTM1MyAxMC43NSAxMy4zNzVDMTAuNzUgMTIuMjE0NyAxMS4yMTA5IDExLjEwMTkgMTIuMDMxNCAxMC4yODE0QzEyLjg1MTkgOS40NjA5NCAxMy45NjQ3IDkgMTUuMTI1IDlIMTUuNzVWNy43NUMxNS43NSA3LjQxODQ4IDE1Ljg4MTcgNy4xMDA1NCAxNi4xMTYxIDYuODY2MTJDMTYuMzUwNSA2LjYzMTcgMTYuNjY4NSA2LjUgMTcgNi41QzE3LjMzMTUgNi41IDE3LjY0OTUgNi42MzE3IDE3Ljg4MzkgNi44NjYxMkMxOC4xMTgzIDcuMTAwNTQgMTguMjUgNy40MTg0OCAxOC4yNSA3Ljc1VjlIMjAuNzVDMjEuMDgxNSA5IDIxLjM5OTUgOS4xMzE3IDIxLjYzMzkgOS4zNjYxMkMyMS44NjgzIDkuNjAwNTQgMjIgOS45MTg0OCAyMiAxMC4yNUMyMiAxMC41ODE1IDIxLjg2ODMgMTAuODk5NSAyMS42MzM5IDExLjEzMzlDMjEuMzk5NSAxMS4zNjgzIDIxLjA4MTUgMTEuNSAyMC43NSAxMS41SDE1LjEyNUMxNC42Mjc3IDExLjUgMTQuMTUwOCAxMS42OTc1IDEzLjc5OTIgMTIuMDQ5MkMxMy40NDc2IDEyLjQwMDggMTMuMjUgMTIuODc3NyAxMy4yNSAxMy4zNzVDMTMuMjUgMTMuODcyMyAxMy40NDc2IDE0LjM0OTIgMTMuNzk5MiAxNC43MDA4QzE0LjE1MDggMTUuMDUyNSAxNC42Mjc3IDE1LjI1IDE1LjEyNSAxNS4yNUgxOC44NzVDMjAuMDM1MyAxNS4yNSAyMS4xNDgxIDE1LjcxMDkgMjEuOTY4NiAxNi41MzE0QzIyLjc4OTEgMTcuMzUxOSAyMy4yNSAxOC40NjQ3IDIzLjI1IDE5LjYyNVoiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+Cg==")
+    no-repeat center center;
+
+  width: 20px;
+  height: 20px;
+  background-color: #18202a;
+  background-size: contain;
+  border-radius: 50%;
+  margin-left: 4px;
+  order: 2;
+}
+
+.item-amount {
+  font-size: 11px;
+  font-weight: 400;
+  color: #18202a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* customize total cashback on cart list */
+
+#ocb-total-cashback-cart .iconAndText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+}
+
+#ocb-total-cashback-cart .icon {
+  background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iY2Jfc3ltYm9sIiBkYXRhLW5hbWU9ImNiIHN5bWJvbCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjYgMTQiIGZpbGw9IiMzMzMiPgogIDxwYXRoIGQ9Ik03LjU1LDkuNTJ2MEExLjI2LDEuMjYsMCwwLDEsNy42Miw5SDIuNTdhMSwxLDAsMCwwLDAsMkg3LjlBMy45MSwzLjkxLDAsMCwxLDcuNTUsOS41MloiLz4KICA8cGF0aCBkPSJNMy44Miw2LjE3VjQuODhoNGMwLS4wNiwwLS4xMywwLS4yYTMuOTQsMy45NCwwLDAsMSwuMzktMS43NUgzLjgyVjEuNjRhLjU2LjU2LDAsMCwwLS45MS0uNDNMLjIsMy40N2EuNTcuNTcsMCwwLDAsMCwuODdMMi45MSw2LjZBLjU2LjU2LDAsMCwwLDMuODIsNi4xN1oiIC8+CiAgPHBhdGggZD0iTTIyLDIuOTNIMTguMzJhMy43MSwzLjcxLDAsMCwxLC40MiwxLjQ0di4wNmExLjMzLDEuMzMsMCwwLDEtLjA4LjQ1SDIyQTIuMDgsMi4wOCwwLDAsMSwyMiw5SDE5LjA5di4xNUE0LjEzLDQuMTMsMCwwLDEsMTguNywxMUgyMmE0LDQsMCwwLDAsMC04LjA2WiIgLz4KICA8cGF0aCBkPSJNMTIuMzksMTMuODlhLjM4LjM4LDAsMCwxLS4xMS0uMjhWMTIuNTRBNS40NSw1LjQ1LDAsMCwxLDEwLjMzLDEyYTMuMjksMy4yOSwwLDAsMS0xLjIyLTEuMSwyLjc4LDIuNzgsMCwwLDEtLjQ0LTEuMzguMzQuMzQsMCwwLDEsLjEtLjIyQS4zMy4zMywwLDAsMSw5LDkuMTVIMTFhLjUxLjUxLDAsMCwxLC4zLjA3Ljc1Ljc1LDAsMCwxLC4yNC4yMSwxLjcxLDEuNzEsMCwwLDAsLjY0LjY3LDIuMzcsMi4zNywwLDAsMCwxLjIuMjYsMi42LDIuNiwwLDAsMCwxLjM0LS4yOC44Ny44NywwLDAsMCwuNDYtLjc2LjcxLjcxLDAsMCwwLS4yNC0uNTYsMiwyLDAsMCwwLS43NS0uMzljLS4zNC0uMTEtLjg0LS4yNC0xLjUxLS4zOUE2LjE4LDYuMTgsMCwwLDEsOS44Niw2Ljg0LDIuNjMsMi42MywwLDAsMSw5LDQuNjhhMi44NywyLjg3LDAsMCwxLC44OS0yLjEyLDQuMDksNC4wOSwwLDAsMSwyLjQ0LTEuMDhWLjM5YS4zOC4zOCwwLDAsMSwuMTEtLjI4QS40LjQsMCwwLDEsMTIuNjYsMGgxLjI4YS4zOC4zOCwwLDAsMSwuMzkuMzlWMS41MWE0LjYxLDQuNjEsMCwwLDEsMS43NS42NCwzLjYxLDMuNjEsMCwwLDEsMS4xMSwxLjA5LDIuNDIsMi40MiwwLDAsMSwuNDIsMS4xOS4zMy4zMywwLDAsMS0uMDkuMjMuMjkuMjksMCwwLDEtLjIzLjFoLTJBLjY3LjY3LDAsMCwxLDE1LDQuN2EuNjYuNjYsMCwwLDEtLjIxLS4yLDEsMSwwLDAsMC0uNS0uNjEsMS44NywxLjg3LDAsMCwwLTEtLjI1LDEuODcsMS44NywwLDAsMC0xLjA2LjI1LjgxLjgxLDAsMCwwLS4zNy43My43My43MywwLDAsMCwuMjEuNTQsMS43NiwxLjc2LDAsMCwwLC42OC40QTEwLjE2LDEwLjE2LDAsMCwwLDE0LDUuOTNhOS4yLDkuMiwwLDAsMSwyLjI5LjY2LDIuNzgsMi43OCwwLDAsMSwxLjI0LDFBMi44MywyLjgzLDAsMCwxLDE4LDkuMTlhMi44MywyLjgzLDAsMCwxLTEsMi4yNCw0LjgyLDQuODIsMCwwLDEtMi42NSwxLjA5djEuMDlhLjM4LjM4LDAsMCwxLS4zOS4zOUgxMi42NkEuNC40LDAsMCwxLDEyLjM5LDEzLjg5WiIvPgo8L3N2Zz4=")
+    no-repeat center center;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  background-size: contain;
+}
+
+#ocb-total-cashback-cart .text::before {
+  content: " Cashback";
+  font-size: 14px;
+}
+
+#ocb-total-cashback-cart .text {
+  padding: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#ocb-total-cashback-cart .amount {
+  color: #041e50;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: right;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+.orderform-template-holder #payment-data .payment-discounts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  margin-bottom: 0;
+}
+
+.orderform-template-holder #payment-data .payment-discounts-list > div {
+  background-color: #f4f2f2;
+  padding: 10px 5px;
+}
+
+.orderform-template-holder #payment-data .payment-discounts-list table tr {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.orderform-template-holder #payment-data .payment-discounts-list table td {
+  flex-grow: unset !important;
+  margin-right: 0px !important;
+}
+
+.orderform-template-holder #payment-data .gift-card-section.form-step.box-default {
+  margin-bottom: 10px;
+}
+
+.payment-discounts-list tbody td.code {
+  display: none;
+}
