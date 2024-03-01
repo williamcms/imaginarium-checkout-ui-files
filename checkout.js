@@ -2,7 +2,7 @@
 const createGiftOptions = () => {
   const body = document.querySelector("body");
   const cartSummaryHolder = document.querySelector(".cart-template > .summary-template-holder");
-  const giftTemplateHolder = document.querySelector("#gift-template-holder");
+  const giftTemplateHolder = document.querySelector("#gift-trigger-holder");
   const overlayTemplateHolder = document.querySelector("#gift-template-overlay");
 
   if (body && !overlayTemplateHolder) {
@@ -162,22 +162,24 @@ const createGiftOptions = () => {
 
   if (cartSummaryHolder && !giftTemplateHolder) {
     const giftTemplate = `
-          <div class="gift-template-holder" id="gift-template-holder">
-              <div class="row-fluid summary">
-                <label class="gift-text">
-                  Que tal mandar um presente com uma embalagem e um cartão todo especial?
-                </label>
-              </div>
-              <div class="clearfix pull-right cart-links">
-                  <button type="submit" id="choose-gift-options" class="btn btn-large pull-left-margin btn-choose-gift-options">
-                      <span class="btn-icon"></span>
-                      <span class="btn-text">Esse pedido é um presente?</span>
-                  </button>
-              </div>
+          <div class="gift-trigger-holder" id="gift-trigger-holder">
+            <div class="row-fluid summary">
+              <label class="gift-text">
+                Que tal mandar um presente com uma embalagem e um cartão todo especial?
+              </label>
+            </div>
+            <div class="clearfix pull-right cart-links">
+                <button type="submit" id="choose-gift-options" class="btn btn-large pull-left-margin btn-choose-gift-options">
+                    <span class="btn-icon"></span>
+                    <span class="btn-text">Esse pedido é um presente?</span>
+                </button>
+            </div>
           </div>
-      `;
+        `;
 
     const tempElement = document.createElement("div");
+    tempElement.classList.addClass("gift-template-holder");
+    tempElement.setAttribute("id", "gift-template-holder");
     tempElement.innerHTML = giftTemplate;
 
     tempElement.querySelector(".btn-choose-gift-options").addEventListener("click", () => {
