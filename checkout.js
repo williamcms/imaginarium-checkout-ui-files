@@ -245,7 +245,7 @@ const createGiftOptions = () => {
         if (giftData.hasOwnProperty("gift")) {
           overlay.find(`input[value="${giftData.gift}"]`).attr("checked", true);
         } else {
-          overlay.find(`input[name="wrap-type"]:first-child`).attr("checked", true);
+          overlay.find(`input[name="wrap-type"]`).first().attr("checked", true);
         }
 
         overlay.find('input[name="gift-message-inputFrom"]').val(giftData?.giftFrom ?? "");
