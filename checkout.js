@@ -2,8 +2,19 @@
 const createGiftOptions = () => {
   const body = document.querySelector("body");
   const cartSummaryHolder = document.querySelector(".cart-template > .summary-template-holder");
-  const giftTemplateHolder = document.querySelector("#gift-trigger-holder");
+  const giftTriggerHolder = document.querySelector("#gift-trigger-holder");
+  const giftSelectedHolder = document.querySelector("#gift-selected-holder");
   const overlayTemplateHolder = document.querySelector("#gift-template-overlay");
+
+  // Alternate between trigger & selected layouts
+  const handleLayoutAlternation = (elm) => {
+    const tempCart = $("#cart-note").val();
+    const _triggerHolder = elm.querySelector("#gift-trigger-holder");
+    const _selectedHolder = elm.querySelector("#gift-selected-holder");
+
+    _selectedHolder.style.display = tempCart.length ? "flex" : "none";
+    _triggerHolder.style.display = tempCart.length ? "none" : "flex";
+  };
 
   if (body && !overlayTemplateHolder) {
     const overlayTemplate = `
@@ -149,6 +160,7 @@ const createGiftOptions = () => {
         cartNote.val(JSON.stringify(data));
         cartNote.trigger("change");
 
+        handleLayoutAlternation(document);
         overlay.hide();
       } else {
         console.error("Missing data");
@@ -160,8 +172,27 @@ const createGiftOptions = () => {
     console.error("Couldn't create giftcard overlay");
   }
 
-  if (cartSummaryHolder && !giftTemplateHolder) {
+  if (cartSummaryHolder && !giftTriggerHolder && !giftSelectedHolder) {
     const giftTemplate = `
+          <div class="gift-selected-holder" id="gift-selected-holder" style="display: none;">
+            <div class="row-fluid header">
+              <label class="gift-text">Opções de presente</label>
+
+              <button class="btn btn-small btn-edit-gift-options">Alterar</button>
+
+              <button type="reset" class="btn btn-small btn-remove-gift-options">
+                <span class="btn-icon"></span>
+                <span class="sr-only">Remover</span>
+              </button>
+            </div>
+            <div class="row-fluid gift-data">
+              <p class="selected-personTo ">De: <span class="option-text"></span></p>
+              <p class="selected-wrap">Embalagem: <span class="option-text"></span></p>
+              <p class="selected-message">Mensagem: <span class="option-text"></span></p>
+              <p class="selected-personFrom ">Para: <span class="option-text"></span></p>
+            </div>
+          </div>
+
           <div class="gift-trigger-holder" id="gift-trigger-holder">
             <div class="row-fluid summary">
               <label class="gift-text">
@@ -178,11 +209,23 @@ const createGiftOptions = () => {
         `;
 
     const tempElement = document.createElement("div");
-    tempElement.classList.addClass("gift-template-holder");
+    tempElement.classList.add("gift-template-holder");
     tempElement.setAttribute("id", "gift-template-holder");
     tempElement.innerHTML = giftTemplate;
 
-    tempElement.querySelector(".btn-choose-gift-options").addEventListener("click", () => {
+    // Check layout
+    handleLayoutAlternation(tempElement);
+
+    tempElement.querySelector(".btn-remove-gift-options").addEventListener("click", () => {
+      const cartNote = $("#cart-note");
+
+      cartNote.val("");
+      cartNote.trigger("change");
+
+      handleLayoutAlternation(tempElement);
+    });
+
+    const handleOverlay = () => {
       const overlay = $("#gift-template-overlay");
       const cartNote = $("#cart-note");
 
@@ -192,24 +235,23 @@ const createGiftOptions = () => {
 
         if (giftData.hasOwnProperty("gift")) {
           overlay.find(`input[value="${giftData.gift}"]`).attr("checked", true);
+        } else {
+          overlay.find(`input[name="wrap-type"]:first-child`).attr("checked", true);
         }
 
-        if (giftData.hasOwnProperty("giftFrom")) {
-          overlay.find('input[name="gift-message-inputFrom"]').val(giftData.giftFrom);
-        }
+        overlay.find('input[name="gift-message-inputFrom"]').val(giftData?.giftFrom ?? "");
 
-        if (giftData.hasOwnProperty("giftTo")) {
-          overlay.find('input[name="gift-message-inputTo"]').val(giftData.giftTo);
-        }
+        overlay.find('input[name="gift-message-inputTo"]').val(giftData?.giftTo ?? "");
 
-        if (giftData.hasOwnProperty("giftMessage")) {
-          overlay.find('textarea[name="gift-message-inputMessage"]').val(giftData.giftMessage);
-          overlay.find('textarea[name="gift-message-inputMessage"]').trigger("keyup");
-        }
+        overlay.find('textarea[name="gift-message-inputMessage"]').val(giftData?.giftMessage ?? "");
+        overlay.find('textarea[name="gift-message-inputMessage"]').trigger("keyup");
       }
 
       overlay.show();
-    });
+    };
+
+    tempElement.querySelector(".btn-edit-gift-options").addEventListener("click", handleOverlay);
+    tempElement.querySelector(".btn-choose-gift-options").addEventListener("click", handleOverlay);
 
     cartSummaryHolder.prepend(tempElement);
   } else if (!cartSummaryHolder) {
