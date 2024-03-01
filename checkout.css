@@ -163,6 +163,7 @@ body.js-vcustom-showNoteField .orderform-template .summary-note {
 .gift-template-overlay > .gift-template-overlay-content .gift-options .gift-options-disclaimer {
   font-size: 0.6875rem;
   color: #808080;
+  text-align: start;
 }
 
 .gift-template-overlay > .gift-template-overlay-content .overlay-content-separator {

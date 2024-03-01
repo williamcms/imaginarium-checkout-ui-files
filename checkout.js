@@ -57,9 +57,7 @@ const createGiftOptions = () => {
                     </div>
                   </div>
 
-                  <div class="gift-options-disclaimer">
-                    *As sacolas de presente virão dobradas no pedido para você embrulhar na sua casa
-                  </div>
+                  <div class="gift-options-disclaimer">*Se optar pela opção "Não, deixa comigo", as sacolas de presente virão dobradas no pedido para você embrulhar na sua casa.</div>
                 </div>
 
                 <div class="overlay-content-separator"></div>
