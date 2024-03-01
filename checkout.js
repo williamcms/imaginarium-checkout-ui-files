@@ -8,12 +8,23 @@ const createGiftOptions = () => {
 
   // Alternate between trigger & selected layouts
   const handleLayoutAlternation = (elm) => {
-    const tempCart = $("#cart-note").val();
+    const cartNoteValue = $("#cart-note").val();
     const _triggerHolder = elm.querySelector("#gift-trigger-holder");
     const _selectedHolder = elm.querySelector("#gift-selected-holder");
 
-    _selectedHolder.style.display = tempCart.length ? "flex" : "none";
-    _triggerHolder.style.display = tempCart.length ? "none" : "flex";
+    const _giftType = _selectedHolder.querySelector(`.gift > .gift-dataText`);
+    const _giftFrom = _selectedHolder.querySelector(`.giftFrom > .gift-dataText`);
+    const _giftTo = _selectedHolder.querySelector(`.giftTo > .gift-dataText`);
+    const _giftMessage = _selectedHolder.querySelector(`.giftMessage > .gift-dataText`);
+
+    const giftData = JSON.parse(cartNoteValue || "{}");
+    _giftType.textContent = giftData.gift === "D" ? "Não, deixa comigo" : "Sim, quero embalado";
+    _giftFrom.textContent = giftData?.giftFrom ?? "";
+    _giftTo.textContent = giftData?.giftTo ?? "";
+    _giftMessage.textContent = giftData?.giftMessage ?? "";
+
+    _selectedHolder.style.display = cartNoteValue.length ? "flex" : "none";
+    _triggerHolder.style.display = cartNoteValue.length ? "none" : "flex";
   };
 
   if (body && !overlayTemplateHolder) {
@@ -186,10 +197,10 @@ const createGiftOptions = () => {
               </button>
             </div>
             <div class="row-fluid gift-data">
-              <p class="selected-personTo ">De: <span class="option-text"></span></p>
-              <p class="selected-wrap">Embalagem: <span class="option-text"></span></p>
-              <p class="selected-message">Mensagem: <span class="option-text"></span></p>
-              <p class="selected-personFrom ">Para: <span class="option-text"></span></p>
+              <p class="gift-dataItem giftFrom">De: <span class="gift-dataText"></span></p>
+              <p class="gift-dataItem gift">Embalagem: <span class="gift-dataText"></span></p>
+              <p class="gift-dataItem giftMessage">Mensagem: <span class="gift-dataText"></span></p>
+              <p class="gift-dataItem giftTo">Para: <span class="gift-dataText"></span></p>
             </div>
           </div>
 
