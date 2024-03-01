@@ -151,7 +151,6 @@ const createGiftOptions = () => {
       const cartNote = $("#cart-note");
 
       const overlay = $("#gift-template-overlay");
-      const pendences = overlay.find(".input-group.warning");
 
       const gift = overlay.find('input[name="wrap-type"]:checked').val() ?? "N";
       const giftFrom = overlay.find('input[name="gift-message-inputFrom"]').val() ?? "";
@@ -165,7 +164,7 @@ const createGiftOptions = () => {
         giftMessage,
       };
 
-      if (pendences.length === 0) {
+      if (gift !== "" && giftFrom !== "" && giftTo !== "" && giftMessage !== "") {
         cartNote.val(JSON.stringify(data));
         cartNote.trigger("change");
 
