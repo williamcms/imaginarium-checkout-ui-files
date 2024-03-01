@@ -66,14 +66,17 @@ body.js-vcustom-showNoteField .orderform-template .summary-note {
 
 .gift-template-overlay > .gift-template-overlay-content {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
   background-color: #fff;
   max-width: 30rem;
   height: fit-content;
   padding: 2rem 1rem;
   border-radius: 1rem;
+}
+
+.gift-template-overlay > .gift-template-overlay-content > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .gift-template-overlay > .gift-template-overlay-content .overlay-content-head {

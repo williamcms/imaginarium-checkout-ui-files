@@ -31,76 +31,78 @@ const createGiftOptions = () => {
     const overlayTemplate = `
           <div class="gift-template-overlay" id="gift-template-overlay" style="display: none;">
             <div class="gift-template-overlay-content">
-              <div class="row-fluid overlay-content-head">
-                <h3 class="gift-title">Opções de presente</h3>
-                <button class="close-overlay" title="Fechar Janela">
-                  <span aria-hidden="true">&times;</span>
-                  <span class="sr-only">Fechar Janela</span>
-                </button>
-              </div>
-
-              <div class="overlay-content-main">
-                <div class="gift-options">
-                  <div class="gift-options-text">
-                    Deseja enviar o presente embalado?
-                  </div>
-
-                  <div class="gift-options-buttons">
-                    <div class="gift-options-buttonsElement">
-                      <input type="radio" name="wrap-type" value="S" id="gift-wrapped" class="sr-only" checked="true" />
-                      <label for="gift-wrapped">Sim, quero embalado</label>
-                    </div>
-
-                    <div class="gift-options-buttonsElement">
-                      <input type="radio" name="wrap-type" value="D" id="gift-unwrapped" class="sr-only" />
-                      <label for="gift-unwrapped">Não, deixa comigo</label>
-                    </div>
-                  </div>
-
-                  <div class="gift-options-disclaimer">*Se optar pela opção "Não, deixa comigo", as sacolas de presente virão dobradas no pedido para você embrulhar na sua casa.</div>
+              <form method="POST">
+                <div class="row-fluid overlay-content-head">
+                  <h3 class="gift-title">Opções de presente</h3>
+                  <button class="close-overlay" title="Fechar Janela">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Fechar Janela</span>
+                  </button>
                 </div>
 
-                <div class="overlay-content-separator"></div>
-
-                <div class="gift-message">
-                  <div class="form-group">
-                    <div class="input-group gift-message-inputFrom">
-                      <label for="gift-message-inputFrom">De</label>
-                      <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom" required />
+                <div class="overlay-content-main">
+                  <div class="gift-options">
+                    <div class="gift-options-text">
+                      Deseja enviar o presente embalado?
                     </div>
-                  </div>
 
-                  <div class="gift-message-area">
-                    <div class="gift-message-info">
-                      <div class="gift-message-title">Mensagem de presente</div>
-                      <div class="gift-message-details">
-                        <span class="char-count">400</span> caracteres
+                    <div class="gift-options-buttons">
+                      <div class="gift-options-buttonsElement">
+                        <input type="radio" name="wrap-type" value="S" id="gift-wrapped" class="sr-only" checked="true" />
+                        <label for="gift-wrapped">Sim, quero embalado</label>
+                      </div>
+
+                      <div class="gift-options-buttonsElement">
+                        <input type="radio" name="wrap-type" value="D" id="gift-unwrapped" class="sr-only" />
+                        <label for="gift-unwrapped">Não, deixa comigo</label>
                       </div>
                     </div>
 
+                    <div class="gift-options-disclaimer">*Se optar pela opção "Não, deixa comigo", as sacolas de presente virão dobradas no pedido para você embrulhar na sua casa.</div>
+                  </div>
+
+                  <div class="overlay-content-separator"></div>
+
+                  <div class="gift-message">
                     <div class="form-group">
-                      <div class="input-group gift-message-inputMessage">
-                          <textarea maxlength="400" rows="8" name="gift-message-inputMessage" id="gift-message-inputMessage" placeholder="Aproveite seu presente!" required></textarea>
+                      <div class="input-group gift-message-inputFrom">
+                        <label for="gift-message-inputFrom">De</label>
+                        <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom" required />
+                      </div>
+                    </div>
+
+                    <div class="gift-message-area">
+                      <div class="gift-message-info">
+                        <div class="gift-message-title">Mensagem de presente</div>
+                        <div class="gift-message-details">
+                          <span class="char-count">400</span> caracteres
+                        </div>
                       </div>
 
-                      <div class="input-group gift-message-inputTo">
-                        <label for="gift-message-inputTo">Para</label>
-                        <input type="text" name="gift-message-inputTo" id="gift-message-inputTo" required />
+                      <div class="form-group">
+                        <div class="input-group gift-message-inputMessage">
+                            <textarea maxlength="400" rows="8" name="gift-message-inputMessage" id="gift-message-inputMessage" placeholder="Aproveite seu presente!" required></textarea>
+                        </div>
+
+                        <div class="input-group gift-message-inputTo">
+                          <label for="gift-message-inputTo">Para</label>
+                          <input type="text" name="gift-message-inputTo" id="gift-message-inputTo" required />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="clearfix pull-right cart-links">
-                <button type="button" id="cancel-gift-options" class="btn btn-large pull-left-margin btn-cancel-gift-options">
-                    <span class="btn-text">Cancelar</span>
-                </button>
-                
-                <button type="submit" id="select-gift-options" class="btn btn-large pull-left-margin btn-select-gift-options btn-success">
-                    <span class="btn-text">Salvar e continuar</span>
-                </button>
-              </div>
+                <div class="clearfix pull-right cart-links">
+                  <button type="button" id="cancel-gift-options" class="btn btn-large pull-left-margin btn-cancel-gift-options">
+                      <span class="btn-text">Cancelar</span>
+                  </button>
+                  
+                  <button type="submit" id="select-gift-options" class="btn btn-large pull-left-margin btn-select-gift-options btn-success">
+                      <span class="btn-text">Salvar e continuar</span>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         `;
@@ -147,7 +149,9 @@ const createGiftOptions = () => {
     });
 
     // Save behavior
-    tempElement.querySelector(".btn-select-gift-options").addEventListener("click", () => {
+    tempElement.querySelector(".btn-select-gift-options").addEventListener("click", (e) => {
+      e.preventDefault();
+
       const cartNote = $("#cart-note");
 
       const overlay = $("#gift-template-overlay");
