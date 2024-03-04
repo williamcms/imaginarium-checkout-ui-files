@@ -1,16 +1,19 @@
 // Opções de Presente
 const createGiftOptions = () => {
+  const elmToAppend =
+    window.location.hash === "#/cart" ? ".cart-template > .summary-template-holder" : ".cart-template > .cart-fixed";
+
   const body = document.querySelector("body");
-  const cartSummaryHolder = document.querySelector(".cart-template > .summary-template-holder");
-  const giftTriggerHolder = document.querySelector("#gift-trigger-holder");
-  const giftSelectedHolder = document.querySelector("#gift-selected-holder");
+  const cartSummaryHolder = document.querySelector(elmToAppend);
+  const giftTriggerHolder = cartSummaryHolder?.querySelector(".gift-trigger-holder");
+  const giftSelectedHolder = cartSummaryHolder?.querySelector(".gift-selected-holder");
   const overlayTemplateHolder = document.querySelector("#gift-template-overlay");
 
   // Alternate between trigger & selected layouts
   const handleLayoutAlternation = (elm) => {
     const cartNoteValue = $("#cart-note").val();
-    const _triggerHolder = elm.querySelector("#gift-trigger-holder");
-    const _selectedHolder = elm.querySelector("#gift-selected-holder");
+    const _triggerHolder = elm.querySelector(".gift-trigger-holder");
+    const _selectedHolder = elm.querySelector(".gift-selected-holder");
 
     const _giftType = _selectedHolder.querySelector(`.gift > .gift-dataText`);
     const _giftFrom = _selectedHolder.querySelector(`.giftFrom > .gift-dataText`);
@@ -156,6 +159,7 @@ const createGiftOptions = () => {
 
       const overlay = $("#gift-template-overlay");
       const form = tempElement.querySelector("form");
+      const target = document.querySelectorAll(".gift-template-holder");
 
       const validity = form?.reportValidity();
 
@@ -175,7 +179,10 @@ const createGiftOptions = () => {
         cartNote.val(JSON.stringify(data));
         cartNote.trigger("change");
 
-        handleLayoutAlternation(document);
+        target.forEach((item) => {
+          handleLayoutAlternation(item);
+        });
+
         overlay.hide();
       } else {
         console.error("Missing data");
@@ -192,7 +199,7 @@ const createGiftOptions = () => {
 
   if (cartSummaryHolder && !giftTriggerHolder && !giftSelectedHolder) {
     const giftTemplate = `
-          <div class="gift-selected-holder" id="gift-selected-holder" style="display: none;">
+          <div class="gift-selected-holder" style="display: none;">
             <div class="row-fluid header">
               <label class="gift-text">Opções de presente</label>
 
@@ -211,7 +218,7 @@ const createGiftOptions = () => {
             </div>
           </div>
 
-          <div class="gift-trigger-holder" id="gift-trigger-holder">
+          <div class="gift-trigger-holder">
             <div class="row-fluid summary">
               <label class="gift-text">
                 Que tal mandar um presente com uma embalagem e um cartão todo especial?
@@ -279,20 +286,12 @@ const createGiftOptions = () => {
 };
 
 // Check changes
-if (window.location.hash === "#/cart") {
-  createGiftOptions();
-}
-
 window.addEventListener("load", () => {
-  if (window.location.hash === "#/cart") {
-    createGiftOptions();
-  }
+  createGiftOptions();
 });
 
 window.addEventListener("hashchange", () => {
-  if (window.location.hash === "#/cart") {
-    createGiftOptions();
-  }
+  createGiftOptions();
 });
 
 // Metricaz dataLayer events
