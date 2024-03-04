@@ -41,6 +41,11 @@ body.js-vcustom-showNoteField .orderform-template .summary-note {
   /* display: none !important; */
 }
 
+span.btn-text {
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -240,6 +245,8 @@ body.js-vcustom-showNoteField .orderform-template .summary-note {
   height: 100%;
   border: 1px solid #ffb100 !important;
   border-radius: 0.25rem;
+  user-select: none;
+  pointer-events: none;
 }
 
 .gift-template-overlay
@@ -421,7 +428,6 @@ body.js-vcustom-showNoteField .orderform-template .summary-note {
 
 .gift-trigger-holder > .cart-links .btn-choose-gift-options .btn-text {
   font-size: 0.8125rem;
-  white-space: nowrap;
 }
 
 .gift-trigger-holder > .cart-links .btn > .btn-icon {

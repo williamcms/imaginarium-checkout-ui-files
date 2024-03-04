@@ -81,7 +81,7 @@ const createGiftOptions = () => {
 
                       <div class="form-group">
                         <div class="input-group gift-message-inputMessage">
-                            <textarea maxlength="400" rows="8" name="gift-message-inputMessage" id="gift-message-inputMessage" placeholder="Aproveite seu presente!" required></textarea>
+                            <textarea maxlength="400" rows="8" name="gift-message-inputMessage" id="gift-message-inputMessage" placeholder="Aproveite seu presente!" required>Aproveite seu presente!</textarea>
                         </div>
 
                         <div class="input-group gift-message-inputTo">
@@ -155,6 +155,9 @@ const createGiftOptions = () => {
       const cartNote = $("#cart-note");
 
       const overlay = $("#gift-template-overlay");
+      const form = tempElement.querySelector("form");
+
+      const validity = form?.reportValidity();
 
       const gift = overlay.find('input[name="wrap-type"]:checked').val() ?? "N";
       const giftFrom = overlay.find('input[name="gift-message-inputFrom"]').val() ?? "";
@@ -168,7 +171,7 @@ const createGiftOptions = () => {
         giftMessage,
       };
 
-      if (gift !== "" && giftFrom !== "" && giftTo !== "" && giftMessage !== "") {
+      if (validity) {
         cartNote.val(JSON.stringify(data));
         cartNote.trigger("change");
 
@@ -176,6 +179,9 @@ const createGiftOptions = () => {
         overlay.hide();
       } else {
         console.error("Missing data");
+        $(inputFields).trigger("blur");
+
+        return form?.reportValidity();
       }
     });
 
@@ -245,18 +251,19 @@ const createGiftOptions = () => {
       if (cartNote && overlay) {
         const giftData = JSON.parse(cartNote.val() || "{}");
 
-        if (giftData.hasOwnProperty("gift")) {
-          overlay.find(`input[value="${giftData.gift}"]`).attr("checked", true);
-        } else {
-          overlay.find(`input[name="wrap-type"]`).first().attr("checked", true);
-        }
+        // Decide whether to use the saved value or the default (pre-selected) value
+        const wrapSuffix = giftData?.gift ? '[value="' + giftData.gift + '"]' : ":checked";
 
-        overlay.find('input[name="gift-message-inputFrom"]').val(giftData?.giftFrom ?? "");
+        const _wrapType = overlay.find(`input[name="wrap-type"]${wrapSuffix}`);
+        const _inputFrom = overlay.find('input[name="gift-message-inputFrom"]');
+        const _inputTo = overlay.find('input[name="gift-message-inputTo"]');
+        const _inputMessage = overlay.find('textarea[name="gift-message-inputMessage"]');
 
-        overlay.find('input[name="gift-message-inputTo"]').val(giftData?.giftTo ?? "");
-
-        overlay.find('textarea[name="gift-message-inputMessage"]').val(giftData?.giftMessage ?? "");
-        overlay.find('textarea[name="gift-message-inputMessage"]').trigger("keyup");
+        _wrapType.attr("checked", true);
+        _inputFrom.val(giftData?.giftFrom ?? _inputFrom.val());
+        _inputTo.val(giftData?.giftTo ?? _inputTo.val());
+        _inputMessage.val(giftData?.giftMessage ?? _inputMessage.val());
+        _inputMessage.trigger("keyup");
       }
 
       overlay.show();
