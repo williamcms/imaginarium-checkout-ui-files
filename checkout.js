@@ -245,11 +245,14 @@ const createGiftOptions = () => {
 
     tempElement.querySelector(".btn-remove-gift-options").addEventListener("click", () => {
       const cartNote = $("#cart-note");
+      const target = document.querySelectorAll(".gift-template-holder");
 
       cartNote.val("");
       cartNote.trigger("change");
 
-      handleLayoutAlternation(tempElement);
+      target.forEach((item) => {
+        handleLayoutAlternation(item);
+      });
     });
 
     const handleOverlay = () => {
