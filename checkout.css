@@ -340,11 +340,13 @@ span.btn-text {
 }
 
 .gift-selected-holder > .header .gift-text {
+  flex: 1 1 70%;
   font-size: 0.9375rem;
   font-weight: 700;
 }
 
 .gift-selected-holder > .header .btn {
+  flex: 1 1 10%;
   font-size: 0.75rem;
   text-decoration: underline;
   background-color: transparent;
@@ -360,6 +362,7 @@ span.btn-text {
 }
 
 .gift-selected-holder > .gift-data .gift-dataItem {
+  font-style: normal;
   word-break: break-all;
 
   overflow: hidden;
