@@ -115,6 +115,8 @@ const createGiftOptions = () => {
 
     // Close behavior
     tempElement.querySelector(".gift-template-overlay").addEventListener("click", (e) => {
+      e.preventDefault();
+
       const overlay = $("#gift-template-overlay");
       const target = $(e.target);
 
