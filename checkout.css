@@ -400,9 +400,16 @@ span.btn-text {
 
 @media (max-width: 490px) {
   .gift-trigger-holder,
-  .summary-template-holder > .summary,
-  .summary-template-holder > .cart-links {
+  .summary-template-holder > .summary {
     padding: 1rem;
+  }
+
+  .summary-template-holder > .cart-links {
+    padding: 0;
+  }
+
+  .summary-template-holder .cart-links-bottom .btn-success {
+    margin: 0;
   }
 }
 
