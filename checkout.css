@@ -62,7 +62,7 @@ span.btn-text {
   position: fixed;
   inset: 0;
   background-color: #00000020;
-  z-index: 9;
+  z-index: 99999999;
 
   display: flex;
   justify-content: center;
