@@ -3,6 +3,8 @@ const createGiftOptions = () => {
   const elmToAppend =
     window.location.hash === "#/cart" ? ".cart-template > .summary-template-holder" : ".cart-template > .cart-fixed";
 
+  const phase = window.location.hash.replace(/[^a-zA-Z]+/g, "");
+
   const body = document.querySelector("body");
   const cartSummaryHolder = document.querySelector(elmToAppend);
   const giftTriggerHolder = cartSummaryHolder?.querySelector(".gift-trigger-holder");
@@ -51,13 +53,13 @@ const createGiftOptions = () => {
 
                     <div class="gift-options-buttons">
                       <div class="gift-options-buttonsElement">
-                        <input type="radio" name="wrap-type" value="S" id="gift-wrapped" class="sr-only" checked="true" />
-                        <label for="gift-wrapped">Sim, quero embalado</label>
+                        <input type="radio" name="wrap-type" value="S" id="gift-wrapped-${phase}" class="sr-only" checked="true" />
+                        <label for="gift-wrapped-${phase}">Sim, quero embalado</label>
                       </div>
 
                       <div class="gift-options-buttonsElement">
-                        <input type="radio" name="wrap-type" value="D" id="gift-unwrapped" class="sr-only" />
-                        <label for="gift-unwrapped">Não, deixa comigo</label>
+                        <input type="radio" name="wrap-type" value="D" id="gift-unwrapped-${phase}" class="sr-only" />
+                        <label for="gift-unwrapped-${phase}">Não, deixa comigo</label>
                       </div>
                     </div>
 
@@ -69,8 +71,9 @@ const createGiftOptions = () => {
                   <div class="gift-message">
                     <div class="form-group">
                       <div class="input-group gift-message-inputFrom">
-                        <label for="gift-message-inputFrom">De</label>
-                        <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom" required />
+                        <label for="gift-message-inputFrom-${phase}">De</label>
+                        <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom-${phase}" 
+                          required />
                       </div>
                     </div>
 
@@ -84,12 +87,12 @@ const createGiftOptions = () => {
 
                       <div class="form-group">
                         <div class="input-group gift-message-inputMessage">
-                            <textarea maxlength="400" rows="8" name="gift-message-inputMessage" id="gift-message-inputMessage" placeholder="Aproveite seu presente!" required>Aproveite seu presente!</textarea>
+                            <textarea maxlength="400" rows="8" name="gift-message-inputMessage" placeholder="Aproveite seu presente!" required>Aproveite seu presente!</textarea>
                         </div>
 
                         <div class="input-group gift-message-inputTo">
-                          <label for="gift-message-inputTo">Para</label>
-                          <input type="text" name="gift-message-inputTo" id="gift-message-inputTo" required />
+                          <label for="gift-message-inputTo-${phase}">Para</label>
+                          <input type="text" name="gift-message-inputTo" id="gift-message-inputTo-${phase}" required />
                         </div>
                       </div>
                     </div>
@@ -97,11 +100,11 @@ const createGiftOptions = () => {
                 </div>
 
                 <div class="clearfix pull-right cart-links">
-                  <button type="button" id="cancel-gift-options" class="btn btn-large pull-left-margin btn-cancel-gift-options">
+                  <button type="button" class="btn btn-large pull-left-margin btn-cancel-gift-options">
                       <span class="btn-text">Cancelar</span>
                   </button>
                   
-                  <button type="submit" id="select-gift-options" class="btn btn-large pull-left-margin btn-select-gift-options btn-success">
+                  <button type="submit" class="btn btn-large pull-left-margin btn-select-gift-options btn-success">
                       <span class="btn-text">Salvar e continuar</span>
                   </button>
                 </div>
@@ -227,7 +230,7 @@ const createGiftOptions = () => {
               </label>
             </div>
             <div class="clearfix pull-right cart-links">
-                <button type="submit" id="choose-gift-options" class="btn btn-large pull-left-margin btn-choose-gift-options">
+                <button type="submit" class="btn btn-large pull-left-margin btn-choose-gift-options">
                     <span class="btn-icon"></span>
                     <span class="btn-text">Esse pedido é um presente?</span>
                 </button>
