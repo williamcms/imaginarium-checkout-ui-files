@@ -99,7 +99,7 @@ const createGiftOptions = () => {
                   </div>
                 </div>
 
-                <div class="clearfix pull-right cart-links">
+                <div class="cart-links">
                   <button type="button" class="btn btn-large pull-left-margin btn-cancel-gift-options">
                       <span class="btn-text">Cancelar</span>
                   </button>
@@ -238,7 +238,7 @@ const createGiftOptions = () => {
                 Que tal mandar um presente com uma embalagem e um cartão todo especial?
               </label>
             </div>
-            <div class="clearfix pull-right cart-links">
+            <div class="cart-links">
                 <button type="submit" class="btn btn-large pull-left-margin btn-choose-gift-options">
                     <span class="btn-icon"></span>
                     <span class="btn-text">Esse pedido é um presente?</span>

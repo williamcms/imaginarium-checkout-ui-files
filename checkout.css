@@ -303,6 +303,7 @@ span.btn-text {
 
 .gift-template-overlay > .gift-template-overlay-content .cart-links button {
   flex: 1 1 0px;
+  max-width: 12.5rem;
 }
 
 .gift-template-overlay > .gift-template-overlay-content .cart-links button.cancel-gift-options {
