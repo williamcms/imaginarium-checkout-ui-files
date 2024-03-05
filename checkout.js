@@ -118,8 +118,6 @@ const createGiftOptions = () => {
 
     // Close behavior
     tempElement.querySelector(".gift-template-overlay").addEventListener("click", (e) => {
-      e.preventDefault();
-
       const overlay = $("#gift-template-overlay");
       const target = $(e.target);
 
@@ -127,8 +125,10 @@ const createGiftOptions = () => {
         target.hasClass("gift-template-overlay") ||
         target.hasClass("close-overlay") ||
         target.hasClass("btn-cancel-gift-options")
-      )
+      ) {
+        e.preventDefault();
         overlay.hide();
+      }
     });
 
     // Information field behavior
