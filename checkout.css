@@ -78,6 +78,12 @@ span.btn-text {
   border-radius: 1rem;
 }
 
+@media (max-width: 490px) {
+  .gift-template-overlay > .gift-template-overlay-content {
+    max-width: 90vw;
+  }
+}
+
 .gift-template-overlay > .gift-template-overlay-content > form {
   display: flex;
   flex-direction: column;
