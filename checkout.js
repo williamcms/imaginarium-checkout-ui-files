@@ -131,6 +131,15 @@ const createGiftOptions = () => {
       }
     });
 
+    window.addEventListener("keydown", (e) => {
+      const overlay = $("#gift-template-overlay");
+      const isOverlayActive = overlay.is(":visible");
+
+      if (e.key !== "Escape" || !isOverlayActive) return;
+
+      overlay.hide();
+    });
+
     // Information field behavior
     const inputFields = tempElement.querySelectorAll("input[type='text'], textarea");
 
