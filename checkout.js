@@ -11,6 +11,24 @@ const createGiftOptions = () => {
   const giftSelectedHolder = cartSummaryHolder?.querySelector(".gift-selected-holder");
   const overlayTemplateHolder = document.querySelector("#gift-template-overlay");
 
+  // Fake button info
+
+  const fakeButton = (currentPhase) => {
+    const buttonToFake =
+      currentPhase === "payment"
+        ? "Finalizar compra"
+        : currentPhase === "shipping"
+        ? "Ir para o pagamento"
+        : "Continuar pagamento";
+
+    return `
+        <button class="submit btn btn-success btn-large btn-block fake-submit" tabindex="200">
+          ${currentPhase === "payment" ? '<i class="icon-lock"></i>' : ""}
+          <span>${buttonToFake}</span>
+        </button>
+      `;
+  };
+
   // Alternate between trigger & selected layouts
   const handleLayoutAlternation = (elm) => {
     const cartNoteValue = $("#cart-note").val();
@@ -213,6 +231,10 @@ const createGiftOptions = () => {
 
   if (cartSummaryHolder && !giftTriggerHolder && !giftSelectedHolder) {
     const giftTemplate = `
+          <p class="fake-submit-wrap" ${phase === "email" ? 'style="display: none;"' : ""}>
+            ${fakeButton(phase)}
+          </p>
+
           <div class="gift-selected-holder" style="display: none;">
             <div class="row-fluid header">
               <label class="gift-text">Opções de presente</label>
@@ -267,6 +289,19 @@ const createGiftOptions = () => {
       });
     });
 
+    // Handle Fake Button
+    tempElement.querySelector(".fake-submit-wrap")?.addEventListener("click", (e) => {
+      const currentPhase = window.location.hash.replace(/[^a-zA-Z]+/g, "");
+
+      if (currentPhase === "payment") {
+        $("#payment-data-submit").click();
+      } else if (currentPhase === "shipping") {
+        $("#btn-go-to-payment").click();
+      } else {
+        $("#cart-to-orderform").click();
+      }
+    });
+
     const handleOverlay = () => {
       const overlay = $("#gift-template-overlay");
       const cartNote = $("#cart-note");
@@ -300,6 +335,15 @@ const createGiftOptions = () => {
   } else if (!cartSummaryHolder) {
     console.error("Couldn't create giftcard options");
   }
+
+  window.addEventListener("hashchange", () => {
+    const currentPhase = window.location.hash.replace(/[^a-zA-Z]+/g, "");
+    const fakeButtonHolder = $(".fake-submit-wrap");
+
+    if (phase !== "email") {
+      setTimeout(() => fakeButtonHolder.html(fakeButton(currentPhase)), 500);
+    }
+  });
 };
 
 // Check changes
