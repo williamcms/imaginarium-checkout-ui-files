@@ -53,13 +53,13 @@ const createGiftOptions = () => {
 
                     <div class="gift-options-buttons">
                       <div class="gift-options-buttonsElement">
-                        <input type="radio" name="wrap-type" value="S" id="gift-wrapped-${phase}" class="sr-only" checked="true" />
-                        <label for="gift-wrapped-${phase}">Sim, quero embalado</label>
+                        <input type="radio" name="wrap-type" value="S" id="gift-wrapped" class="sr-only" checked="true" />
+                        <label for="gift-wrapped">Sim, quero embalado</label>
                       </div>
 
                       <div class="gift-options-buttonsElement">
-                        <input type="radio" name="wrap-type" value="D" id="gift-unwrapped-${phase}" class="sr-only" />
-                        <label for="gift-unwrapped-${phase}">Não, deixa comigo</label>
+                        <input type="radio" name="wrap-type" value="D" id="gift-unwrapped" class="sr-only" />
+                        <label for="gift-unwrapped">Não, deixa comigo</label>
                       </div>
                     </div>
 
@@ -71,8 +71,8 @@ const createGiftOptions = () => {
                   <div class="gift-message">
                     <div class="form-group">
                       <div class="input-group gift-message-inputFrom">
-                        <label for="gift-message-inputFrom-${phase}">De</label>
-                        <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom-${phase}" 
+                        <label for="gift-message-inputFrom">De</label>
+                        <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom" 
                           required />
                       </div>
                     </div>
@@ -91,8 +91,8 @@ const createGiftOptions = () => {
                         </div>
 
                         <div class="input-group gift-message-inputTo">
-                          <label for="gift-message-inputTo-${phase}">Para</label>
-                          <input type="text" name="gift-message-inputTo" id="gift-message-inputTo-${phase}" required />
+                          <label for="gift-message-inputTo">Para</label>
+                          <input type="text" name="gift-message-inputTo" id="gift-message-inputTo" required />
                         </div>
                       </div>
                     </div>
