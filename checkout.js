@@ -355,6 +355,19 @@ window.addEventListener("hashchange", () => {
   createGiftOptions();
 });
 
+// Hide invisible payment methods
+window.addEventListener("load", () => {
+  const paymentItem = $(".payment-group-item");
+
+  paymentItem.each((_, item) => {
+    const elm = $(item);
+
+    if (!elm.is(":visible")) {
+      elm.parents(".v-custom-payment-item-wrap").hide();
+    }
+  });
+});
+
 // Metricaz dataLayer events
 // Payment methods
 $(document).on("click", ".payment-group-list-btn > a", (e) => {
