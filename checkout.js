@@ -152,6 +152,36 @@ const renderProductShelf = (props) => {
       });
 
       _wrapperContainer.appendChild(_productListage);
+
+      // Trigger dataLayer event for productImpressions
+      window.dataLayer = window.dataLayer || [];
+      const productImpressions = {
+        event: "productImpressions",
+        eventCategory: "enhanced-ecommerce",
+        eventAction: "productImpression",
+        noInteraction: "1",
+        ecommerce: {
+          impressions: [
+            products.map((product, index) => {
+              return {
+                name: product.productName,
+                id: product.productId,
+                price: product.items[0].sellers[0].commertialOffer.Price,
+                category: product.categories[0].replace(/[^\w ]/g, ""),
+                brand: product.items[0].sellers[0].sellerName,
+                list: listName,
+                position: index + 1,
+                dimension1: product.productReference,
+                dimension2: product.productReference,
+                dimension3: product.items[0].name,
+                variant: product.items[0].itemId,
+              };
+            }),
+          ].flat(),
+        },
+      };
+
+      window.dataLayer.push(productImpressions);
     })
     .catch((error) => {
       console.error("There was a problem fetching the data:", error);
