@@ -331,7 +331,7 @@ span.btn-text {
   max-width: 12.5rem;
 }
 
-.gift-template-overlay > .gift-template-overlay-content .cart-links button.cancel-gift-options {
+.gift-template-overlay > .gift-template-overlay-content .cart-links button.btn-cancel-gift-options {
   color: #7841be;
   border: 1px solid #7841be;
 }
