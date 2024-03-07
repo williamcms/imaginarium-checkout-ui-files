@@ -518,7 +518,7 @@ a#payment-group-custom204PaymentGroupPaymentGroup {
 }
 
 /* Remove a margin da forma de pagamento TrocaCommerce */
-.orderform-template-holder #payment-data .v-custom-payment-item-wrap:nth-child(6) {
+.orderform-template-holder #payment-data .v-custom-payment-item-wrap:nth-child(5) {
   margin-bottom: 0;
 }
 
