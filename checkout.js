@@ -1,3 +1,165 @@
+// Render Products Shelf
+// Props call function
+const shelfProps = {
+  wrapperClass: ".e-bar-container",
+  collectionId: "1435",
+  listName: "your_list_name",
+  minProducts: 20,
+  labelButtonBefore: "ADICIONAR À SACOLA",
+  labelButtonAfter: "ADICIONADO",
+  labelButtonUnavailable: "INDISPONÍVEL",
+  disableAfterAdd: false,
+  showUnavailable: true,
+};
+
+// Format prices to R$
+const formatAmount = (value) => {
+  return new Intl.NumberFormat("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  }).format(value / 100);
+};
+
+// Helper function to create elements
+const createElement = (tag, attributes, children) => {
+  const elm = document.createElement(tag);
+
+  for (const key in attributes) {
+    if (key === "className") {
+      elm.setAttribute("class", attributes[key]);
+    } else {
+      elm.setAttribute(key, attributes[key]);
+    }
+  }
+
+  if (children) {
+    if (typeof children === "string") {
+      elm.textContent = children;
+    } else if (Array.isArray(children)) {
+      children.forEach((child) => {
+        if (typeof child === "string") {
+          elm.appendChild(document.createTextNode(child));
+        } else {
+          elm.appendChild(child);
+        }
+      });
+    } else {
+      elm.appendChild(children);
+    }
+  }
+
+  return elm;
+};
+
+// Fetch data and render the product shelf
+const renderProductShelf = (props) => {
+  const {
+    wrapperClass,
+    collectionId,
+    listName,
+    minProducts = 20,
+    labelButtonBefore = "ADICIONAR À SACOLA",
+    labelButtonAfter = "ADICIONADO",
+    labelButtonUnavailable = "INDISPONÍVEL",
+    showUnavailable = true,
+  } = props;
+
+  fetch(`/api/catalog/pvt/collection/${collectionId}/products?page=1&pageSize=${minProducts}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("An error occurred while retrieving the collection:", response);
+      }
+      return response.json();
+    })
+    .then(async ({ Data: collectionItems }) => {
+      const dataPromise = await Promise.all(
+        collectionItems.map(async ({ ProductId }) => {
+          try {
+            const response = await fetch(`/api/catalog_system/pub/products/search/?fq=productId:${ProductId}`);
+
+            if (!response.ok) {
+              throw new Error("An error occurred while fetching the product:", response);
+            }
+
+            const data = await response.json();
+            return data;
+          } catch (error) {
+            console.error("An error occurred while fetching the product:", error);
+          }
+        })
+      );
+
+      return dataPromise.flat() || [];
+    })
+    .then((data) => {
+      const products = data;
+
+      const _wrapperContainer = document.querySelector(wrapperClass);
+      const _productListage = createElement("div", { class: "productListage" });
+
+      _productListage.setAttribute("data-collection", collectionId);
+      _productListage.setAttribute("data-maxItems", minProducts);
+
+      products.forEach((product) => {
+        const {
+          productName,
+          items: [
+            {
+              images: [{ imageUrl }],
+              sellers: [
+                {
+                  commertialOffer: { Price, ListPrice, AvailableQuantity },
+                },
+              ],
+            },
+          ],
+        } = product;
+
+        if (!showUnavailable && AvailableQuantity === 0) return;
+
+        const discount = (((ListPrice - Price) / ListPrice) * 100).toFixed();
+        const hasDiscount = Price < ListPrice;
+
+        const _productWrapper = createElement("div", { class: "productWrapper" });
+        const _productItem = createElement("article", { class: "productItem" });
+
+        const _productImage = createElement("div", { class: "productImage" });
+        const _imageElement = createElement("img", { src: imageUrl, alt: productName, class: "imageElement" });
+        _productImage.appendChild(_imageElement);
+
+        if (hasDiscount) {
+          const _discountElement = createElement("span", { class: "discountElement" }, `-${discount}%`);
+          const _discountWrapper = createElement("div", { class: "discountWrapper" }, _discountElement);
+          _productImage.appendChild(_discountWrapper);
+        }
+
+        const InfoWapper = createElement("div", { class: "InfoWapper" });
+
+        const _productName = createElement("h3", { class: "productName" }, product.productName);
+        const _productNameWrapper = createElement("div", { class: "productNameWrapper" }, _productName);
+        InfoWapper.appendChild(_productNameWrapper);
+
+        const _productPrice = createElement("span", { class: "productPrice" }, formatAmount(Price));
+        const _productPriceWrapper = createElement("strong", { class: "productPriceWrapper" }, _productPrice);
+        InfoWapper.appendChild(_productPriceWrapper);
+
+        _productItem.appendChild(_productImage);
+        _productItem.appendChild(InfoWapper);
+
+        _productWrapper.appendChild(_productItem);
+
+        _productListage.appendChild(_productWrapper);
+      });
+
+      _wrapperContainer.appendChild(_productListage);
+    })
+    .catch((error) => {
+      console.error("There was a problem fetching the data:", error);
+    });
+};
+
+renderProductShelf(shelfProps);
+
 // Opções de Presente
 const createGiftOptions = () => {
   const elmToAppend =
@@ -854,13 +1016,6 @@ const getParamsToTotalElementFromPage = (page = "cart") => {
     id: "ocb-total-cashback-payment",
     class: ".cart-template.mini-cart.span4 tfoot",
   };
-};
-
-const formatAmount = (value) => {
-  return new Intl.NumberFormat("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  }).format(value / 100);
 };
 
 const simulateOrder = async (orderForm, usedCashback = 0) => {
