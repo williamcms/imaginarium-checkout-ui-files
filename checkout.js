@@ -5,8 +5,7 @@ const shelfProps = {
   collectionId: "1435",
   listName: "your_list_name",
   minProducts: 20,
-  labelButtonBefore: "ADICIONAR À SACOLA",
-  labelButtonAfter: "ADICIONADO",
+  labelButton: "Adicionar",
   labelButtonUnavailable: "INDISPONÍVEL",
   disableAfterAdd: false,
   showUnavailable: true,
@@ -19,6 +18,11 @@ const formatAmount = (value) => {
     currency: "BRL",
   }).format(value / 100);
 };
+
+const { format: parsePrice } = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+});
 
 // Helper function to create elements
 const createElement = (tag, attributes, children) => {
@@ -58,8 +62,7 @@ const renderProductShelf = (props) => {
     collectionId,
     listName,
     minProducts = 20,
-    labelButtonBefore = "ADICIONAR À SACOLA",
-    labelButtonAfter = "ADICIONADO",
+    labelButton = "Adicionar",
     labelButtonUnavailable = "INDISPONÍVEL",
     showUnavailable = true,
   } = props;
@@ -108,7 +111,7 @@ const renderProductShelf = (props) => {
               images: [{ imageUrl }],
               sellers: [
                 {
-                  commertialOffer: { Price, ListPrice, AvailableQuantity },
+                  commertialOffer: { Price, AvailableQuantity },
                 },
               ],
             },
@@ -117,8 +120,8 @@ const renderProductShelf = (props) => {
 
         if (!showUnavailable && AvailableQuantity === 0) return;
 
-        const discount = (((ListPrice - Price) / ListPrice) * 100).toFixed();
-        const hasDiscount = Price < ListPrice;
+        const labelToShow = AvailableQuantity ? labelButton : labelButtonUnavailable;
+        const labelAttr = { class: "addToCartButton", ...(AvailableQuantity ? {} : { disabled: true }) };
 
         const _productWrapper = createElement("div", { class: "productWrapper" });
         const _productItem = createElement("article", { class: "productItem" });
@@ -127,24 +130,22 @@ const renderProductShelf = (props) => {
         const _imageElement = createElement("img", { src: imageUrl, alt: productName, class: "imageElement" });
         _productImage.appendChild(_imageElement);
 
-        if (hasDiscount) {
-          const _discountElement = createElement("span", { class: "discountElement" }, `-${discount}%`);
-          const _discountWrapper = createElement("div", { class: "discountWrapper" }, _discountElement);
-          _productImage.appendChild(_discountWrapper);
-        }
-
-        const InfoWapper = createElement("div", { class: "InfoWapper" });
+        const productInfo = createElement("div", { class: "productInfo" });
 
         const _productName = createElement("h3", { class: "productName" }, product.productName);
         const _productNameWrapper = createElement("div", { class: "productNameWrapper" }, _productName);
-        InfoWapper.appendChild(_productNameWrapper);
+        productInfo.appendChild(_productNameWrapper);
 
-        const _productPrice = createElement("span", { class: "productPrice" }, formatAmount(Price));
-        const _productPriceWrapper = createElement("strong", { class: "productPriceWrapper" }, _productPrice);
-        InfoWapper.appendChild(_productPriceWrapper);
+        const _productPrice = createElement("strong", { class: "productPrice" }, parsePrice(Price));
+        const _productPriceWrapper = createElement("div", { class: "productPriceWrapper" }, _productPrice);
+        productInfo.appendChild(_productPriceWrapper);
+
+        const _addToCartButton = createElement("button", labelAttr, labelToShow);
+        const _addToCartWrapper = createElement("div", { class: "addToCartWrapper" }, _addToCartButton);
+        productInfo.appendChild(_addToCartWrapper);
 
         _productItem.appendChild(_productImage);
-        _productItem.appendChild(InfoWapper);
+        _productItem.appendChild(productInfo);
 
         _productWrapper.appendChild(_productItem);
 

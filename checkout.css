@@ -36,6 +36,59 @@
   background-position: 0.3rem 50%;
 }
 
+/* Vitrine */
+.productListage[data-collection] {
+  display: flex;
+}
+
+.productListage[data-collection] .productWrapper {
+}
+
+.productListage[data-collection] .productWrapper > .productItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productImage {
+  position: relative;
+  line-height: 0;
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productImage .imageElement {
+  max-width: 5.9375rem;
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productInfo {
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productInfo .productNameWrapper {
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productInfo .productNameWrapper .productName {
+  font-weight: 500;
+  color: #4d4d44;
+  margin: 0;
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productInfo .productPriceWrapper {
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productInfo .productPriceWrapper .productPrice {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productInfo .addToCartWrapper {
+}
+
+.productListage[data-collection] .productWrapper > .productItem .productInfo .addToCartWrapper .addToCartButton {
+  color: #7841be;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid #7841be;
+  border-radius: 12.5rem;
+}
+
 /* Opções de Presente - Overlay */
 body.js-vcustom-showNoteField .orderform-template .summary-note {
   display: none !important;
