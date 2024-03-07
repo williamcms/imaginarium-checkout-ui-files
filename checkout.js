@@ -14,9 +14,11 @@ const shelfProps = {
 // Ref.: https://kenwheeler.github.io/slick/
 // Os breakpoints responsivos significam que todas as opções serão aplicadas para dispositivos
 // com largura menor que o valor especificado. Por exemplo:
-// - Se 1024px, será aplicado o padrão definido fora do breakpoint (caso o maior breakpoint seja 1024).
-// - Se 1023px, será aplicado o padrão definido dentro do breakpoint (breakpoint: 1024px).
-
+// - Considere que há três breakpoints, são eles: 1024, 600, 490
+// - Se 1024px de largura, será aplicado o padrão definido fora do breakpoint.
+// - Se 1023px de largura, será aplicado o padrão definido dentro do breakpoint 1024.
+// - Se 600px de largura, será aplicado o padrão definido dentro do breakpoint 1024.
+// - Se 599px de largura, será aplicado o padrão definido dentro do breakpoint 600.
 const slickProps = {
   infinite: true,
   swipeToSlide: true,
