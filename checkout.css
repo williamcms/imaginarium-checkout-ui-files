@@ -81,6 +81,10 @@ span.btn-text {
 @media (max-width: 490px) {
   .gift-template-overlay > .gift-template-overlay-content {
     max-width: 90vw;
+    max-height: 70vh;
+    margin-top: 25vh;
+    overflow-y: scroll;
+    border-radius: 1rem 1rem 0 0;
   }
 }
 
@@ -145,12 +149,19 @@ span.btn-text {
   width: 100%;
 }
 
+@media (max-width: 490px) {
+  .gift-template-overlay > .gift-template-overlay-content .gift-options .gift-options-buttons {
+    gap: 1rem;
+  }
+}
+
 .gift-template-overlay
   > .gift-template-overlay-content
   .gift-options
   .gift-options-buttons
   .gift-options-buttonsElement {
   width: 50%;
+  min-width: 10.3125rem;
 }
 
 .gift-template-overlay
@@ -175,6 +186,17 @@ span.btn-text {
   font-weight: 700;
   color: #1eefc3;
   border: 0.0625rem solid #1eefc3;
+}
+
+@media (max-width: 490px) {
+  .gift-template-overlay
+    > .gift-template-overlay-content
+    .gift-options
+    .gift-options-buttons
+    .gift-options-buttonsElement
+    label {
+    font-size: 0.75rem;
+  }
 }
 
 .gift-template-overlay > .gift-template-overlay-content .gift-options .gift-options-disclaimer {
