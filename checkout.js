@@ -11,6 +11,40 @@ const shelfProps = {
   showUnavailable: true,
 };
 
+// Ref.: https://kenwheeler.github.io/slick/
+// Os breakpoints responsivos significam que todas as opções serão aplicadas para dispositivos
+// com largura menor que o valor especificado. Por exemplo:
+// - Se 1024px, será aplicado o padrão definido fora do breakpoint (caso o maior breakpoint seja 1024).
+// - Se 1023px, será aplicado o padrão definido dentro do breakpoint (breakpoint: 1024px).
+
+const slickProps = {
+  infinite: true,
+  swipeToSlide: true,
+  slidesToShow: 4,
+  centerMode: false,
+  centerPadding: "50px",
+  arrows: true,
+  dots: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 490,
+      slidesToShow: 1,
+    },
+  ],
+};
+
 // Format prices to R$
 const formatAmount = (value) => {
   return new Intl.NumberFormat("pt-br", {
@@ -190,6 +224,39 @@ const renderProductShelf = (props) => {
 };
 
 renderProductShelf(shelfProps);
+
+// Build slick/carousel
+window.addEventListener("load", () => {
+  const slickInterval = setInterval(() => {
+    const productListage = document.querySelector(".productListage[data-collection]");
+    const script = document.querySelector("script[data-name='slick/carousel']");
+
+    if (!productListage) return;
+
+    if (!script) {
+      const slickScript = createElement("script", {
+        src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
+        type: "text/javascript",
+        "data-name": "slick/carousel",
+      });
+
+      const slickStyles = createElement("link", {
+        href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css",
+        rel: "stylesheet",
+        "data-name": "slick/styles",
+      });
+
+      document.head.appendChild(slickScript);
+      document.head.appendChild(slickStyles);
+    }
+
+    if (script) {
+      $(".productListage").slick(slickProps);
+
+      clearInterval(slickInterval);
+    }
+  }, 500);
+});
 
 // Opções de Presente
 const createGiftOptions = () => {

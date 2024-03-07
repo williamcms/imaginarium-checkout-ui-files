@@ -37,7 +37,7 @@
 }
 
 /* Vitrine */
-.productListage[data-collection] {
+.productListage[data-collection]:not(.slick-initialized) {
   display: flex;
 }
 
