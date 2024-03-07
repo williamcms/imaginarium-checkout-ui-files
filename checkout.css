@@ -106,6 +106,9 @@ span.btn-text {
   top: 1rem;
   right: 1rem;
   font-size: 2rem;
+  color: #000000;
+  line-height: unset;
+  padding: 0;
   border: none;
   background-color: transparent;
 }
