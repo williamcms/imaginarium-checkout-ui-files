@@ -38,19 +38,19 @@ const slickProps = {
   mobileFirst: false,
   responsive: [
     {
-      breakpoint: 1025,
+      breakpoint: 1120,
       settings: {
         slidesToShow: 3,
       },
     },
     {
-      breakpoint: 961,
+      breakpoint: 890,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 490,
+      breakpoint: 640,
       settings: {
         slidesToShow: 1,
       },
