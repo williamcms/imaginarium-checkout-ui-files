@@ -32,11 +32,17 @@ const slickProps = {
   swipeToSlide: true,
   centerMode: false,
   centerPadding: "50px",
-  slidesToShow: 4,
+  slidesToShow: 5,
   arrows: true,
   dots: false,
   mobileFirst: false,
   responsive: [
+    {
+      breakpoint: 1440,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
     {
       breakpoint: 1120,
       settings: {
