@@ -269,6 +269,48 @@ const renderProductShelf = (props) => {
 
 renderProductShelf(shelfProps);
 
+// Ref.: https://codepen.io/GordonLai/pen/XWjaagz
+const touchScroll = (elm = "") => {
+  const slider = typeof elm === "string" ? document.querySelector(elm) : elm;
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  const mouseDown = (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  };
+
+  const mouseLeave = () => {
+    isDown = false;
+    slider.classList.remove("active");
+  };
+
+  const mouseUp = () => {
+    isDown = false;
+    slider.classList.remove("active");
+  };
+
+  const mouseMove = (e) => {
+    const container = $(e.target).parents(".productListage");
+    if (container.hasClass("slick-initialized")) return console.log("stopped");
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    var prevScrollLeft = slider.scrollLeft;
+    slider.scrollLeft = scrollLeft - walk;
+    velX = slider.scrollLeft - prevScrollLeft;
+  };
+
+  slider.addEventListener("mousedown", (e) => mouseDown(e));
+  slider.addEventListener("mouseleave", () => mouseLeave());
+  slider.addEventListener("mouseup", () => mouseUp());
+  slider.addEventListener("mousemove", (e) => mouseMove(e));
+};
+
 // Build slick/carousel
 window.addEventListener("load", () => {
   const slickInterval = setInterval(() => {
@@ -295,9 +337,16 @@ window.addEventListener("load", () => {
     }
 
     if (script) {
-      $(".productListage").slick(slickProps);
+      try {
+        $(".productListage").slick(slickProps);
 
-      clearInterval(slickInterval);
+        clearInterval(slickInterval);
+      } catch (error) {
+        console.error("There was a problem while building the slider:", error);
+      }
+
+      // Starts touch behavior in case of slick failure
+      touchScroll(productListage);
     }
   }, 500);
 });

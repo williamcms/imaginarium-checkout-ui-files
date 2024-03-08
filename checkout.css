@@ -88,7 +88,21 @@
 /* If Slick Fails */
 .productListage[data-collection]:not(.slick-initialized) {
   gap: 1.5rem;
+  padding-bottom: 0.375rem;
   overflow-x: scroll;
+}
+
+.productListage[data-collection]:not(.slick-initialized)::-webkit-scrollbar {
+  height: 0.25rem;
+}
+
+.productListage[data-collection]:not(.slick-initialized)::-webkit-scrollbar-track {
+  display: none;
+}
+
+.productListage[data-collection]:not(.slick-initialized)::-webkit-scrollbar-thumb {
+  background-color: #7841be;
+  border-radius: 1rem;
 }
 
 .productListage[data-collection]:not(.slick-initialized) .productWrapper {
