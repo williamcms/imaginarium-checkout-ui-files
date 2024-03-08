@@ -8,7 +8,7 @@
   font-weight: 600;
   font-size: 11px !important;
   background-color: #22c25f;
-  color: #fff;
+  color: #ffffff;
   padding: 0 0.5rem 0 1rem;
   border-radius: 0.3rem;
   margin-left: 0.5rem;
@@ -27,7 +27,7 @@
   font-weight: 600;
   font-size: 11px !important;
   background-color: #3fb39f;
-  color: #fff;
+  color: #ffffff;
   padding: 0 0.5rem 0 1rem;
   border-radius: 0.3rem;
   margin-left: 0.5rem;
@@ -124,7 +124,7 @@ span.btn-text {
 
 .gift-template-overlay > .gift-template-overlay-content {
   position: relative;
-  background-color: #fff;
+  background-color: #ffffff;
   max-width: 30rem;
   height: fit-content;
   padding: 2rem 1rem;
@@ -483,7 +483,7 @@ span.btn-text {
 .gift-trigger-holder,
 .summary-template-holder > .summary,
 .summary-template-holder > .cart-links {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 1.25rem;
   margin-top: 0;
   max-width: calc(100% - 40px);
@@ -773,7 +773,7 @@ fieldset.box-client-info-pj,
 }
 
 .e-header .e-header-content .e-link-comprar a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -800,7 +800,7 @@ fieldset.box-client-info-pj,
   font-size: 14px;
   line-height: 14px;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
 }
 
 .e-header .e-header-content .e-ambiente-header::before {
@@ -1149,7 +1149,7 @@ div[data-form="cartao-presente"] div span.is-active,
 div[data-form="vale-compra"] div span.is-active {
   background: #6ab617;
   border: 1px solid #6ab617;
-  color: #fff;
+  color: #ffffff;
 }
 @media only screen and (max-width: 900px) {
   .codeSection__removeBtn {
@@ -1201,7 +1201,7 @@ div.valesUtilizados__disclaimer {
 }
 .codeSection {
   width: 100%;
-  background: #fff;
+  background: #ffffff;
   padding: 5px 15px;
   margin-top: 10px;
 }
@@ -1312,7 +1312,7 @@ span[data-bind*="text: availableLabel"] {
 }
 
 .input-prepend .add-on:first-child {
-  background: #fff;
+  background: #ffffff;
   color: #000;
   height: fit-content !important;
   width: fit-content;
@@ -1380,7 +1380,7 @@ span[data-bind*="text: availableLabel"] {
 /* customize items list on cart */
 
 .item-container {
-  background: #fff;
+  background: #ffffff;
   width: fit-content;
   display: flex;
   padding: 0;
@@ -1454,7 +1454,7 @@ span[data-bind*="text: availableLabel"] {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: #fff;
+  background-color: #ffffff;
   margin-bottom: 0;
 }
 
