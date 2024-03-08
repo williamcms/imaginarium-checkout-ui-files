@@ -155,9 +155,11 @@ const renderProductShelf = (props) => {
           productName,
           items: [
             {
+              itemId,
               images: [{ imageUrl }],
               sellers: [
                 {
+                  sellerId,
                   commertialOffer: { Price, AvailableQuantity },
                 },
               ],
@@ -188,6 +190,24 @@ const renderProductShelf = (props) => {
         productInfo.appendChild(_productPriceWrapper);
 
         const _addToCartButton = createElement("button", labelAttr, labelToShow);
+        _addToCartButton.addEventListener("click", () => {
+          // vtexjs.checkout.addToCart(items, expectedOrderFormSections, salesChannel)
+          vtexjs.checkout
+            .addToCart(
+              [
+                {
+                  id: itemId,
+                  quantity: 1,
+                  seller: sellerId,
+                },
+              ],
+              null,
+              1
+            )
+            .done((orderForm) => {
+              console.log("Item Added >>", orderForm);
+            });
+        });
         const _addToCartWrapper = createElement("div", { class: "addToCartWrapper" }, _addToCartButton);
         productInfo.appendChild(_addToCartWrapper);
 
