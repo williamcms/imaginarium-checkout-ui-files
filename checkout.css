@@ -176,9 +176,6 @@
   gap: 0.5rem;
 }
 
-.productListage[data-collection] .productWrapper > .productItem .productInfo .productNameWrapper {
-}
-
 .productListage[data-collection] .productWrapper > .productItem .productInfo .productNameWrapper .productName {
   font-weight: 500;
   color: #4d4d44;
@@ -192,15 +189,9 @@
   -webkit-box-orient: vertical;
 }
 
-.productListage[data-collection] .productWrapper > .productItem .productInfo .productPriceWrapper {
-}
-
 .productListage[data-collection] .productWrapper > .productItem .productInfo .productPriceWrapper .productPrice {
   font-size: 1rem;
   font-weight: 700;
-}
-
-.productListage[data-collection] .productWrapper > .productItem .productInfo .addToCartWrapper {
 }
 
 .productListage[data-collection] .productWrapper > .productItem .productInfo .addToCartWrapper .addToCartButton {
