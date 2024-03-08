@@ -7,42 +7,53 @@ const shelfProps = {
   listName: "shelf-top-checkout",
   minProducts: 20,
   labelButton: "Adicionar",
-  labelButtonUnavailable: "INDISPONÍVEL",
+  labelButtonUnavailable: "Indisponível",
+  // Definir essa opção como falsa impedirá que produtos indisponíveis apareçam, mas não garantirá
+  // que o número de produtos atinja o mínimo informado. Atualmente, não é possível filtrar por
+  // disponibilidade em coleções.
   showUnavailable: true,
 };
 
 // Ref.: https://kenwheeler.github.io/slick/
-// Os breakpoints responsivos significam que todas as opções serão aplicadas para dispositivos
-// com largura menor que o valor especificado. Por exemplo:
-// - Considere que há três breakpoints, são eles: 1024, 600, 490
-// - Se 1024px de largura, será aplicado o padrão definido fora do breakpoint.
-// - Se 1023px de largura, será aplicado o padrão definido dentro do breakpoint 1024.
-// - Se 600px de largura, será aplicado o padrão definido dentro do breakpoint 1024.
-// - Se 599px de largura, será aplicado o padrão definido dentro do breakpoint 600.
+// Exemplo de uso dos breakpoints:
+// - Suponha que haja três breakpoints: 1025, 961 e 490.
+
+// - Se mobileFirst: false,
+// - Se a largura for 1025px, será aplicado o padrão definido fora do breakpoint.
+// - Se a largura for 1024px, será aplicado o padrão definido dentro do breakpoint 1025.
+// - Ou seja, viewport-width < breakpoint para aplica-lo e não cair no padrão de fora
+
+// - Se mobileFirst: true,
+// - Se a largura for 491px, será aplicado o padrão definido dentro do breakpoint 490.
+// - Se a largura for 490px, será aplicado o padrão definido fora do breakpoint.
+// - Ou seja, viewport-width > breakpoint para aplica-lo e não cair no padrão de fora
 const slickProps = {
   infinite: true,
   swipeToSlide: true,
-  slidesToShow: 4,
   centerMode: false,
   centerPadding: "50px",
+  slidesToShow: 4,
   arrows: true,
   dots: false,
+  mobileFirst: false,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1025,
       settings: {
         slidesToShow: 3,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 961,
       settings: {
         slidesToShow: 2,
       },
     },
     {
       breakpoint: 490,
-      slidesToShow: 1,
+      settings: {
+        slidesToShow: 1,
+      },
     },
   ],
   prevArrow: `
