@@ -7,6 +7,8 @@ const shelfProps = {
   listName: "shelf-top-checkout",
   minProducts: 20,
   labelButton: "Adicionar",
+  labelButtonProccess: "Adicionando...",
+  labelButtonAfter: "Adicionado",
   labelButtonUnavailable: "Indisponível",
   // Definir essa opção como falsa impedirá que produtos indisponíveis apareçam, mas não garantirá
   // que o número de produtos atinja o mínimo informado. Atualmente, não é possível filtrar por
@@ -122,7 +124,9 @@ const renderProductShelf = (props) => {
     listName,
     minProducts = 20,
     labelButton = "Adicionar",
-    labelButtonUnavailable = "INDISPONÍVEL",
+    labelButtonProccess = "Adicionando...",
+    labelButtonAfter = "Adicionado",
+    labelButtonUnavailable = "Indisponível",
     showUnavailable = true,
   } = props;
 
@@ -207,7 +211,13 @@ const renderProductShelf = (props) => {
         productInfo.appendChild(_productPriceWrapper);
 
         const _addToCartButton = createElement("button", labelAttr, labelToShow);
-        _addToCartButton.addEventListener("click", () => {
+        _addToCartButton.addEventListener("click", (e) => {
+          const elm = $(e.target);
+
+          // Add some style to represent that the click worked
+          elm.addClass("load");
+          elm.text(labelButtonProccess);
+
           // vtexjs.checkout.addToCart(items, expectedOrderFormSections, salesChannel)
           vtexjs.checkout
             .addToCart(
@@ -221,8 +231,12 @@ const renderProductShelf = (props) => {
               null,
               1
             )
-            .done((orderForm) => {
-              console.log("Item Added >>", orderForm);
+            .done(() => {
+              setTimeout(() => {
+                elm.removeClass("load");
+                elm.addClass("added");
+                elm.text(labelButtonAfter);
+              }, 1000);
             });
         });
         const _addToCartWrapper = createElement("div", { class: "addToCartWrapper" }, _addToCartButton);
