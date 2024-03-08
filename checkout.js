@@ -48,17 +48,12 @@ const slickProps = {
 };
 
 // Format prices to R$
-const formatAmount = (value) => {
-  return new Intl.NumberFormat("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  }).format(value / 100);
-};
-
 const { format: parsePrice } = new Intl.NumberFormat("pt-BR", {
   style: "currency",
   currency: "BRL",
 });
+
+const formatAmount = (value) => parsePrice(value / 100);
 
 // Helper function to create elements
 const createElement = (tag, attributes, children) => {
