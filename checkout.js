@@ -7,7 +7,7 @@ const shelfProps = {
   listName: "shelf-top-checkout",
   minProducts: 20,
   labelButton: "Adicionar",
-  labelButtonProccess: "Adicionando...",
+  labelButtonProccess: "Adicionando",
   labelButtonAfter: "Adicionado",
   labelButtonUnavailable: "Indisponível",
   // Definir essa opção como falsa impedirá que produtos indisponíveis apareçam, mas não garantirá
@@ -124,7 +124,7 @@ const renderProductShelf = (props) => {
     listName,
     minProducts = 20,
     labelButton = "Adicionar",
-    labelButtonProccess = "Adicionando...",
+    labelButtonProccess = "Adicionando",
     labelButtonAfter = "Adicionado",
     labelButtonUnavailable = "Indisponível",
     showUnavailable = true,
