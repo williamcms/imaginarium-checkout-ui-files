@@ -1,13 +1,13 @@
 // Render Products Shelf
-// Props call function
+// Shelf Config
 const shelfProps = {
   wrapperClass: ".e-bar-container",
   collectionId: "1435",
-  listName: "your_list_name",
+  shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
+  listName: "shelf-top-checkout",
   minProducts: 20,
   labelButton: "Adicionar",
   labelButtonUnavailable: "INDISPONÍVEL",
-  disableAfterAdd: false,
   showUnavailable: true,
 };
 
@@ -45,6 +45,16 @@ const slickProps = {
       slidesToShow: 1,
     },
   ],
+  prevArrow: `
+  <button class="slick-prev slick-arrow" aria-label="Anterior" type="button" style="display: inline-block;">
+    <span class="btn-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </button>`,
+  nextArrow: `
+  <button class="slick-next slick-arrow" aria-label="Próximo" type="button" style="display: inline-block;">
+    <span class="btn-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </button>`,
 };
 
 // Format prices to R$
@@ -91,6 +101,7 @@ const renderProductShelf = (props) => {
   const {
     wrapperClass,
     collectionId,
+    shelfTitle,
     listName,
     minProducts = 20,
     labelButton = "Adicionar",
@@ -127,9 +138,14 @@ const renderProductShelf = (props) => {
     })
     .then((data) => {
       const products = data;
+      const titleElm = document.createRange().createContextualFragment(shelfTitle);
 
       const _wrapperContainer = document.querySelector(wrapperClass);
+
       const _productListage = createElement("div", { class: "productListage" });
+      const _shelfTitleElement = createElement("h2", { class: "shelfTitleElement" }, titleElm);
+      const _shelfTitle = createElement("div", { class: "shelfTitle" }, _shelfTitleElement);
+      const _shelfWrapper = createElement("div", { class: "shelfWrapper" }, [_shelfTitle, _productListage]);
 
       _productListage.setAttribute("data-collection", collectionId);
       _productListage.setAttribute("data-maxItems", minProducts);
@@ -183,7 +199,7 @@ const renderProductShelf = (props) => {
         _productListage.appendChild(_productWrapper);
       });
 
-      _wrapperContainer.appendChild(_productListage);
+      _wrapperContainer.appendChild(_shelfWrapper);
 
       // Trigger dataLayer event for productImpressions
       window.dataLayer = window.dataLayer || [];
