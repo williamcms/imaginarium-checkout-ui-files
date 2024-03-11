@@ -80,6 +80,15 @@ const slickProps = {
   </button>`,
 };
 
+// Initializers
+window.addEventListener("load", () => {
+  // List elements to initialize shelf component
+  renderProductShelf(shelfProps);
+
+  // List elements to initialize slick-carousel
+  buildSlick(slickProps);
+});
+
 // Format prices to R$
 const { format: parsePrice } = new Intl.NumberFormat("pt-BR", {
   style: "currency",
@@ -287,9 +296,6 @@ const renderProductShelf = (props) => {
     });
 };
 
-// List elements to initialize shelf component
-renderProductShelf(shelfProps);
-
 // Ref.: https://codepen.io/GordonLai/pen/XWjaagz
 const touchScroll = (elm = "") => {
   const slider = typeof elm === "string" ? document.querySelector(elm) : elm;
@@ -374,10 +380,6 @@ const buildSlick = (props) => {
   }, 500);
 };
 
-window.addEventListener("load", () => {
-  // List elements to initialize slick-carousel
-  buildSlick(slickProps);
-});
 
 // Opções de Presente
 const createGiftOptions = () => {
