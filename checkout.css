@@ -42,7 +42,7 @@
   flex-direction: column;
   gap: 1.5rem;
   background-color: #ffffff;
-  margin: 1.25rem 2rem;
+  margin: 1.25rem auto;
   padding: 1.5rem;
   border-radius: 1rem;
 }

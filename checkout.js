@@ -41,6 +41,7 @@ const slickProps = {
   arrows: true,
   dots: false,
   mobileFirst: false,
+  respondTo: "slider",
   responsive: [
     {
       breakpoint: 1440,
