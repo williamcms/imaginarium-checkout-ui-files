@@ -192,12 +192,14 @@ const renderProductShelf = (props) => {
 
         const labelToShow = AvailableQuantity ? labelButton : labelButtonUnavailable;
         const labelAttr = { class: "addToCartButton", ...(AvailableQuantity ? {} : { disabled: true }) };
+        const imageId = imageUrl.match(/ids\/\d+/g)?.[0];
+        const responsiveImage = !imageId ? imageUrl : imageUrl.replace(/ids\/\d+/g, `${imageId}-0-120`);
 
         const _productWrapper = createElement("div", { class: "productWrapper" });
         const _productItem = createElement("article", { class: "productItem" });
 
         const _productImage = createElement("div", { class: "productImage" });
-        const _imageElement = createElement("img", { src: imageUrl, alt: productName, class: "imageElement" });
+        const _imageElement = createElement("img", { src: responsiveImage, alt: productName, class: "imageElement" });
         _productImage.appendChild(_imageElement);
 
         const productInfo = createElement("div", { class: "productInfo" });
