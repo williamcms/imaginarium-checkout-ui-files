@@ -31,6 +31,8 @@ const shelfProps = {
 // - Se a largura for 490px, será aplicado o padrão definido fora do breakpoint.
 // - Ou seja, viewport-width > breakpoint para aplica-lo e não cair no padrão de fora
 const slickProps = {
+  active: true,
+  wrapperClass: ".productListage[data-collection]",
   infinite: true,
   swipeToSlide: true,
   centerMode: false,
@@ -330,12 +332,14 @@ const touchScroll = (elm = "") => {
 };
 
 // Build slick/carousel
-window.addEventListener("load", () => {
+const buildSlick = (props) => {
+  const { active, wrapperClass } = props;
+
   const slickInterval = setInterval(() => {
-    const productListage = document.querySelector(".productListage[data-collection]");
+    const wrapperElm = document.querySelector(wrapperClass);
     const script = document.querySelector("script[data-name='slick/carousel']");
 
-    if (!productListage) return;
+    if (!wrapperElm) return;
 
     if (!script) {
       const slickScript = createElement("script", {
@@ -356,7 +360,7 @@ window.addEventListener("load", () => {
 
     if (script) {
       try {
-        $(".productListage").slick(slickProps);
+        if (active) $(wrapperElm).slick(props);
 
         clearInterval(slickInterval);
       } catch (error) {
@@ -364,9 +368,14 @@ window.addEventListener("load", () => {
       }
 
       // Starts touch behavior in case of slick failure
-      touchScroll(productListage);
+      touchScroll(wrapperElm);
     }
   }, 500);
+};
+
+window.addEventListener("load", () => {
+  // List elements to initialize slick-carousel
+  buildSlick(slickProps);
 });
 
 // Opções de Presente
