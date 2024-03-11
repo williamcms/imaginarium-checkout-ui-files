@@ -194,7 +194,9 @@ const renderProductShelf = (props) => {
 
       products.forEach((productItem) => {
         const {
+          productId,
           productName,
+          brand,
           items: [
             {
               itemId,
@@ -207,6 +209,7 @@ const renderProductShelf = (props) => {
               ],
             },
           ],
+          categories: [category],
         } = productItem;
 
         if (!showUnavailable && AvailableQuantity === 0) return;
@@ -240,6 +243,29 @@ const renderProductShelf = (props) => {
           // Add some style to represent that the click worked
           elm.addClass("load");
           elm.text(labelButtonProccess);
+
+          // Push dataLayer event
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "addToCart",
+            eventCategory: "enhanced-ecommerce",
+            eventAction: "addToCart",
+            ecommerce: {
+              add: {
+                products: [
+                  {
+                    name: productName,
+                    id: productId,
+                    price: Price,
+                    brand: brand,
+                    category: category.replace(/^\/|\/$/g, ""),
+                    variant: itemId,
+                    quantity: 1,
+                  },
+                ],
+              },
+            },
+          });
 
           // vtexjs.checkout.addToCart(items, expectedOrderFormSections, salesChannel)
           vtexjs.checkout
