@@ -220,7 +220,17 @@ const renderProductShelf = (props) => {
         const responsiveImage = !imageId ? imageUrl : imageUrl.replace(/ids\/\d+/g, `${imageId}-${imageSize}`);
 
         const _productWrapper = createElement("div", { class: "productWrapper" });
-        const _productItem = createElement("article", { class: "productItem", "data-sku": itemId });
+        const _productItem = createElement("article", {
+          class: "productItem",
+          "data-productName": productName,
+          "data-productId": productId,
+          "data-price": Price,
+          "data-brand": brand,
+          "data-category": category,
+          "data-sku": itemId,
+          "data-sellerId": sellerId,
+          "data-quantity": 1,
+        });
 
         const _productImage = createElement("div", { class: "productImage" });
         const _imageElement = createElement("img", { src: responsiveImage, alt: productName, class: "imageElement" });
@@ -237,58 +247,6 @@ const renderProductShelf = (props) => {
         productInfo.appendChild(_productPriceWrapper);
 
         const _addToCartButton = createElement("button", labelAttr, labelToShow);
-        _addToCartButton.addEventListener("click", (e) => {
-          const elm = $(e.target);
-
-          // Add some style to represent that the click worked
-          elm.addClass("load");
-          elm.text(labelButtonProccess);
-
-          // Push dataLayer event
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: "addToCart",
-            eventCategory: "enhanced-ecommerce",
-            eventAction: "addToCart",
-            ecommerce: {
-              add: {
-                products: [
-                  {
-                    name: productName,
-                    id: productId,
-                    price: Price,
-                    brand: brand,
-                    category: category.replace(/^\/|\/$/g, ""),
-                    variant: itemId,
-                    quantity: 1,
-                  },
-                ],
-              },
-            },
-          });
-
-          // vtexjs.checkout.addToCart(items, expectedOrderFormSections, salesChannel)
-          vtexjs.checkout
-            .addToCart(
-              [
-                {
-                  id: itemId,
-                  quantity: 1,
-                  seller: sellerId,
-                },
-              ],
-              null,
-              1
-            )
-            .done(() => {
-              // Execute action on all elements because the addToCart checkout
-              // function triggers 'done' only after all click actions are completed
-              // and the products are added to the minicart
-              $(".addToCartButton.load").text(labelButtonAfter);
-              $(".addToCartButton.load").addClass("added");
-              $(".addToCartButton").removeClass("load");
-            });
-        });
 
         const _addToCartWrapper = createElement("div", { class: "addToCartWrapper" }, _addToCartButton);
         productInfo.appendChild(_addToCartWrapper);
@@ -792,6 +750,71 @@ const createGiftOptions = (props) => {
     }
   });
 };
+
+$(document).on("click", ".productItem[data-sku] .addToCartButton", (e) => {
+  const elm = $(e.target);
+
+  const name = elm.attr("data-productName");
+  const id = elm.attr("data-productId");
+  const price = elm.attr("data-price");
+  const brand = elm.attr("data-brand");
+  const category = elm.attr("data-category");
+  const variant = elm.attr("data-sku");
+  const seller = elm.attr("data-sellerId");
+  const quantity = parseInt(elm.attr("data-quantity")) ?? 1;
+
+  // Add some style to represent that the click worked
+  $(`.productItem[data-sku="${variant}"] .addToCartButton`).addClass("load");
+  $(`.productItem[data-sku="${variant}"] .addToCartButton`).text(labelButtonProccess);
+
+  // Set quantity
+  $(`.productItem[data-sku="${variant}"]`).attr("data-quantity", quantity + 1);
+
+  // Push dataLayer event
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "addToCart",
+    eventCategory: "enhanced-ecommerce",
+    eventAction: "addToCart",
+    ecommerce: {
+      add: {
+        products: [
+          {
+            name,
+            id,
+            price,
+            brand,
+            category,
+            variant,
+            quantity,
+          },
+        ],
+      },
+    },
+  });
+
+  // vtexjs.checkout.addToCart(items, expectedOrderFormSections, salesChannel)
+  vtexjs.checkout
+    .addToCart(
+      [
+        {
+          id,
+          quantity: 1,
+          seller,
+        },
+      ],
+      null,
+      1
+    )
+    .done(() => {
+      // Execute action on all elements because the addToCart checkout
+      // function triggers 'done' only after all click actions are completed
+      // and the products are added to the minicart
+      $(".addToCartButton.load").text(labelButtonAfter);
+      $(".addToCartButton.load").addClass("added");
+      $(".addToCartButton").removeClass("load");
+    });
+});
 
 // Hide invisible payment methods
 window.addEventListener("load", () => {
