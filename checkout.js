@@ -192,7 +192,7 @@ const renderProductShelf = (props) => {
       _productListage.setAttribute("data-collection", collectionId);
       _productListage.setAttribute("data-maxItems", minProducts);
 
-      products.forEach((product) => {
+      products.forEach((productItem) => {
         const {
           productName,
           items: [
@@ -207,7 +207,7 @@ const renderProductShelf = (props) => {
               ],
             },
           ],
-        } = product;
+        } = productItem;
 
         if (!showUnavailable && AvailableQuantity === 0) return;
 
@@ -225,7 +225,7 @@ const renderProductShelf = (props) => {
 
         const productInfo = createElement("div", { class: "productInfo" });
 
-        const _productName = createElement("h3", { class: "productName" }, product.productName);
+        const _productName = createElement("h3", { class: "productName" }, productName);
         const _productNameWrapper = createElement("div", { class: "productNameWrapper" }, _productName);
         productInfo.appendChild(_productNameWrapper);
 
@@ -283,7 +283,7 @@ const renderProductShelf = (props) => {
         event: "productImpressions",
         eventCategory: "enhanced-ecommerce",
         eventAction: "productImpression",
-        noInteraction: "1",
+        noInteraction: 1,
         ecommerce: {
           impressions: [
             products.map((product, index) => {
