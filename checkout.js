@@ -80,6 +80,11 @@ const slickProps = {
   </button>`,
 };
 
+// Gift Config
+const giftProps = {
+  active: true,
+};
+
 // Initializers
 window.addEventListener("load", () => {
   // List elements to initialize shelf component
@@ -87,6 +92,14 @@ window.addEventListener("load", () => {
 
   // List elements to initialize slick-carousel
   buildSlick(slickProps);
+
+  // Initialize gift-wrap
+  createGiftOptions(giftProps);
+});
+
+// Check and initialize gift-wrap on page change
+window.addEventListener("hashchange", () => {
+  createGiftOptions(giftProps);
 });
 
 // Format prices to R$
@@ -380,9 +393,12 @@ const buildSlick = (props) => {
   }, 500);
 };
 
+// Render gift-wrap options
+const createGiftOptions = (props) => {
+  const { active } = props;
 
-// Opções de Presente
-const createGiftOptions = () => {
+  if (!active) return;
+
   const elmToAppend =
     window.location.hash === "#/cart" ? ".cart-template > .summary-template-holder" : ".cart-template > .cart-fixed";
 
@@ -728,15 +744,6 @@ const createGiftOptions = () => {
     }
   });
 };
-
-// Check changes
-window.addEventListener("load", () => {
-  createGiftOptions();
-});
-
-window.addEventListener("hashchange", () => {
-  createGiftOptions();
-});
 
 // Hide invisible payment methods
 window.addEventListener("load", () => {
