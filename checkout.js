@@ -15,6 +15,7 @@ const shelfProps = {
   labelButtonAfter: "Adicionado",
   labelButtonUnavailable: "Indisponível",
   showUnavailable: true,
+  hideOn: ["v-custom-step-email", "v-custom-step-profile", "v-custom-step-shipping", "v-custom-step-payment"],
 };
 
 // Ref.: https://kenwheeler.github.io/slick/
@@ -156,9 +157,12 @@ const renderProductShelf = (props) => {
     labelButtonAfter = "Adicionado",
     labelButtonUnavailable = "Indisponível",
     showUnavailable = true,
+    hideOn = [],
   } = props;
 
   if (!active) return;
+
+  const _wrapperContainer = document.querySelector(wrapperClass);
 
   // Definir mais que 50 retorna um erro da API
   const MIN_PROD = 1;
@@ -178,7 +182,6 @@ const renderProductShelf = (props) => {
     .then((data) => {
       const products = data;
 
-      const _wrapperContainer = document.querySelector(wrapperClass);
       const _titleElm = document.createRange().createContextualFragment(shelfTitle);
 
       const _productListage = createElement("div", { class: "productListage" });
@@ -307,6 +310,22 @@ const renderProductShelf = (props) => {
     .catch((error) => {
       console.error("There was a problem fetching the data:", error);
     });
+
+  if (hideOn.length) {
+    const hideShelf = () =>
+      hideOn.every((item) => {
+        if ($("body").hasClass(item)) {
+          $(_wrapperContainer).hide();
+          return false;
+        } else {
+          $(_wrapperContainer).show();
+          return true;
+        }
+      });
+
+    window.addEventListener("slickload", hideShelf);
+    window.addEventListener("hashchange", hideShelf);
+  }
 };
 
 // Ref.: https://codepen.io/GordonLai/pen/XWjaagz
@@ -389,6 +408,9 @@ const buildSlick = (props) => {
 
       // Starts touch behavior in case of slick failure
       touchScroll(wrapperElm);
+
+      // Trigger custom event
+      window.dispatchEvent(new Event("slickload"));
     }
   }, 500);
 };
