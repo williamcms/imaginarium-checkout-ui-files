@@ -5,14 +5,17 @@ const shelfProps = {
   collectionId: "1435",
   shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
   listName: "shelf-top-checkout",
+  // Define o tamanho das imagens dos produtos (use 0 para automático). Exemplo:
+  // O valor 0-120 ajustará automaticamente a largura da imagem com base na altura informada.
+  imageSize: "0-120",
   minProducts: 20,
   labelButton: "Adicionar",
   labelButtonProccess: "Adicionando",
   labelButtonAfter: "Adicionado",
   labelButtonUnavailable: "Indisponível",
   // Definir essa opção como falsa impedirá que produtos indisponíveis apareçam, mas não garantirá
-  // que o número de produtos atinja o mínimo informado. Atualmente, não é possível filtrar por
-  // disponibilidade em coleções.
+  // que o número de produtos atinja o mínimo informado (minProducts). Atualmente, não é possível
+  // filtrar por disponibilidade em coleções.
   showUnavailable: true,
 };
 
@@ -122,6 +125,7 @@ const renderProductShelf = (props) => {
     collectionId,
     shelfTitle,
     listName,
+    imageSize = "0-120",
     minProducts = 20,
     labelButton = "Adicionar",
     labelButtonProccess = "Adicionando",
@@ -193,7 +197,7 @@ const renderProductShelf = (props) => {
         const labelToShow = AvailableQuantity ? labelButton : labelButtonUnavailable;
         const labelAttr = { class: "addToCartButton", ...(AvailableQuantity ? {} : { disabled: true }) };
         const imageId = imageUrl.match(/ids\/\d+/g)?.[0];
-        const responsiveImage = !imageId ? imageUrl : imageUrl.replace(/ids\/\d+/g, `${imageId}-0-120`);
+        const responsiveImage = !imageId ? imageUrl : imageUrl.replace(/ids\/\d+/g, `${imageId}-${imageSize}`);
 
         const _productWrapper = createElement("div", { class: "productWrapper" });
         const _productItem = createElement("article", { class: "productItem" });
