@@ -1,6 +1,7 @@
 // Render Products Shelf
 // Shelf Config
 const shelfProps = {
+  active: true,
   wrapperClass: ".e-bar-container",
   collectionId: "1435",
   shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
@@ -13,9 +14,6 @@ const shelfProps = {
   labelButtonProccess: "Adicionando",
   labelButtonAfter: "Adicionado",
   labelButtonUnavailable: "Indisponível",
-  // Definir essa opção como falsa impedirá que produtos indisponíveis apareçam, mas não garantirá
-  // que o número de produtos atinja o mínimo informado (minProducts). Atualmente, não é possível
-  // filtrar por disponibilidade em coleções.
   showUnavailable: true,
 };
 
@@ -121,6 +119,7 @@ const createElement = (tag, attributes, children) => {
 // Fetch data and render the product shelf
 const renderProductShelf = (props) => {
   const {
+    active,
     wrapperClass,
     collectionId,
     shelfTitle,
@@ -134,41 +133,31 @@ const renderProductShelf = (props) => {
     showUnavailable = true,
   } = props;
 
-  fetch(`/api/catalog/pvt/collection/${collectionId}/products?page=1&pageSize=${minProducts}`)
+  if (!active) return;
+
+  // Definir mais que 50 retorna um erro da API
+  const MIN_PROD = 1;
+  const MAX_PROD = 50;
+
+  const useAvailable = showUnavailable ? `` : `&fq=isAvailablePerSalesChannel_1:true`;
+  const useRange = `&_from=0&_to=${Math.min(Math.max(parseInt(minProducts), MIN_PROD), MAX_PROD) - 1}`;
+
+  // https://developers.vtex.com/docs/api-reference/search-api?endpoint=get-/api/catalog_system/pub/products/search
+  fetch(`/api/catalog_system/pub/products/search/${collectionId}/?map=productClusterIds${useAvailable}${useRange}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("An error occurred while retrieving the collection:", response);
       }
       return response.json();
     })
-    .then(async ({ Data: collectionItems }) => {
-      const dataPromise = await Promise.all(
-        collectionItems.map(async ({ ProductId }) => {
-          try {
-            const response = await fetch(`/api/catalog_system/pub/products/search/?fq=productId:${ProductId}`);
-
-            if (!response.ok) {
-              throw new Error("An error occurred while fetching the product:", response);
-            }
-
-            const data = await response.json();
-            return data;
-          } catch (error) {
-            console.error("An error occurred while fetching the product:", error);
-          }
-        })
-      );
-
-      return dataPromise.flat() || [];
-    })
     .then((data) => {
       const products = data;
-      const titleElm = document.createRange().createContextualFragment(shelfTitle);
 
       const _wrapperContainer = document.querySelector(wrapperClass);
+      const _titleElm = document.createRange().createContextualFragment(shelfTitle);
 
       const _productListage = createElement("div", { class: "productListage" });
-      const _shelfTitleElement = createElement("h2", { class: "shelfTitleElement" }, titleElm);
+      const _shelfTitleElement = createElement("h2", { class: "shelfTitleElement" }, _titleElm);
       const _shelfTitle = createElement("div", { class: "shelfTitle" }, _shelfTitleElement);
       const _shelfWrapper = createElement("div", { class: "shelfWrapper" }, [_shelfTitle, _productListage]);
 
@@ -200,7 +189,7 @@ const renderProductShelf = (props) => {
         const responsiveImage = !imageId ? imageUrl : imageUrl.replace(/ids\/\d+/g, `${imageId}-${imageSize}`);
 
         const _productWrapper = createElement("div", { class: "productWrapper" });
-        const _productItem = createElement("article", { class: "productItem" });
+        const _productItem = createElement("article", { class: "productItem", "data-sku": itemId });
 
         const _productImage = createElement("div", { class: "productImage" });
         const _imageElement = createElement("img", { src: responsiveImage, alt: productName, class: "imageElement" });
@@ -295,6 +284,7 @@ const renderProductShelf = (props) => {
     });
 };
 
+// List elements to initialize shelf component
 renderProductShelf(shelfProps);
 
 // Ref.: https://codepen.io/GordonLai/pen/XWjaagz
