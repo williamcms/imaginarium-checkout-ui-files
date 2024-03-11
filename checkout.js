@@ -232,13 +232,15 @@ const renderProductShelf = (props) => {
               1
             )
             .done(() => {
-              setTimeout(() => {
-                elm.removeClass("load");
-                elm.addClass("added");
-                elm.text(labelButtonAfter);
-              }, 1000);
+              // Execute action on all elements because the addToCart checkout
+              // function triggers 'done' only after all click actions are completed
+              // and the products are added to the minicart
+              $(".addToCartButton.load").text(labelButtonAfter);
+              $(".addToCartButton.load").addClass("added");
+              $(".addToCartButton").removeClass("load");
             });
         });
+
         const _addToCartWrapper = createElement("div", { class: "addToCartWrapper" }, _addToCartButton);
         productInfo.appendChild(_addToCartWrapper);
 
@@ -315,7 +317,7 @@ const touchScroll = (elm = "") => {
 
   const mouseMove = (e) => {
     const container = $(e.target).parents(".productListage");
-    if (container.hasClass("slick-initialized")) return console.log("stopped");
+    if (container.hasClass("slick-initialized")) return;
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
