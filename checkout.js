@@ -95,16 +95,16 @@ window.addEventListener("load", () => {
     ...shelfProps,
     active: true,
     wrapperClass: ".e-header > .shelfContainer",
-    collectionId: "1435",
-    shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
+    collectionId: "1318",
+    shelfTitle: "Que tal completar o seu carrinho?",
     listName: "shelf-bottom-checkout",
   });
   renderProductShelf({
     ...shelfProps,
     active: true,
     wrapperClass: ".e-footer > .shelfContainer",
-    collectionId: "1436",
-    shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
+    collectionId: "1437",
+    shelfTitle: "Conheça os mascotinhos",
     listName: "shelf-bottom-checkout",
   });
 
