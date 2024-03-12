@@ -37,6 +37,22 @@
 }
 
 /* Shelf */
+.shelfContainer {
+  margin: 1.25rem auto;
+}
+
+.shelfContainer > *:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.e-header > .shelfContainer:last-child {
+  margin-bottom: 2.8125rem;
+}
+
+.e-footer > .shelfContainer {
+  margin-top: 0;
+}
+
 .shelfWrapper {
   display: flex;
   flex-direction: column;
@@ -970,20 +986,12 @@ fieldset.box-client-info-pj,
   }
 }
 
-.e-header .e-bar-container {
-  margin: 1.25rem auto;
-}
-
-.e-header .e-bar-container > *:not(:last-child) {
-  margin-bottom: 1.25rem;
-}
-
 .e-footer {
-  display: flex !important;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   margin: 0 auto;
   justify-content: center;
-  border-top: 1px solid #dcdcdc;
 }
 
 .e-footer .e-footer__content {
@@ -992,6 +1000,7 @@ fieldset.box-client-info-pj,
   width: 100%;
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid #dcdcdc;
 }
 
 @media screen and (max-width: 768px) {
@@ -1104,6 +1113,12 @@ fieldset.box-client-info-pj,
 .checkout-container {
   display: flex;
   flex-direction: column-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .checkout-container {
+    margin-bottom: 0;
+  }
 }
 
 .giftCard {
