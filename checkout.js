@@ -33,7 +33,7 @@ const shelfProps = {
 // - Ou seja, viewport-width > breakpoint para aplica-lo e não cair no padrão de fora
 const slickProps = {
   active: true,
-  wrapperClass: ".productListage[data-collection]",
+  wrapperClass: ".e-header .productListage[data-collection]",
   infinite: true,
   swipeToSlide: true,
   centerMode: false,
