@@ -1,11 +1,11 @@
-// Render Products Shelf
 // Shelf Config
 const shelfProps = {
+  // Defina as opções especificas abaixo (5) na chamada da função, evitando definir mais props
   active: true,
-  wrapperClass: ".e-bar-container",
-  collectionId: "1435",
-  shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
-  listName: "shelf-top-checkout",
+  wrapperClass: "",
+  collectionId: "",
+  shelfTitle: "",
+  listName: "",
   // Define o tamanho das imagens dos produtos (use 0 para automático). Exemplo:
   // O valor 0-120 ajustará automaticamente a largura da imagem com base na altura informada.
   imageSize: "0-120",
@@ -18,6 +18,7 @@ const shelfProps = {
   hideOn: ["v-custom-step-email", "v-custom-step-profile", "v-custom-step-shipping", "v-custom-step-payment"],
 };
 
+// Slick Config
 // Ref.: https://kenwheeler.github.io/slick/
 // Exemplo de uso dos breakpoints:
 // - Suponha que haja três breakpoints: 1025, 961 e 490.
@@ -32,8 +33,9 @@ const shelfProps = {
 // - Se a largura for 490px, será aplicado o padrão definido fora do breakpoint.
 // - Ou seja, viewport-width > breakpoint para aplica-lo e não cair no padrão de fora
 const slickProps = {
+  // Defina as opções especificas abaixo (2) na chamada da função, evitando definir mais props
   active: true,
-  wrapperClass: ".e-header .productListage[data-collection]",
+  wrapperClass: "",
   infinite: true,
   swipeToSlide: true,
   centerMode: false,
@@ -89,10 +91,26 @@ const giftProps = {
 // Initializers
 window.addEventListener("load", () => {
   // List elements to initialize shelf component
-  renderProductShelf(shelfProps);
+  renderProductShelf({
+    ...shelfProps,
+    active: true,
+    wrapperClass: ".e-header > .shelfContainer",
+    collectionId: "1435",
+    shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
+    listName: "shelf-bottom-checkout",
+  });
+  renderProductShelf({
+    ...shelfProps,
+    active: true,
+    wrapperClass: ".e-footer > .shelfContainer",
+    collectionId: "1436",
+    shelfTitle: "Que tal uma pelúcia <s>para amassar</s> fofa?",
+    listName: "shelf-bottom-checkout",
+  });
 
   // List elements to initialize slick-carousel
-  buildSlick(slickProps);
+  buildSlick({ ...slickProps, active: true, wrapperClass: ".e-header .productListage[data-collection]" });
+  buildSlick({ ...slickProps, active: true, wrapperClass: ".e-footer .productListage[data-collection]" });
 
   // Initialize gift-wrap
   createGiftOptions(giftProps);
@@ -145,11 +163,11 @@ const createElement = (tag, attributes, children) => {
 // Fetch data and render the product shelf
 const renderProductShelf = (props) => {
   const {
-    active,
-    wrapperClass,
-    collectionId,
-    shelfTitle,
-    listName,
+    active = false,
+    wrapperClass = "",
+    collectionId = "",
+    shelfTitle = "",
+    listName = "",
     imageSize = "0-120",
     minProducts = 20,
     labelButton = "Adicionar",
@@ -425,7 +443,7 @@ const touchScroll = (elm = "") => {
 
 // Build slick/carousel
 const buildSlick = (props) => {
-  const { active, wrapperClass } = props;
+  const { active = false, wrapperClass = "" } = props;
 
   const slickInterval = setInterval(() => {
     const wrapperElm = document.querySelector(wrapperClass);
@@ -470,7 +488,7 @@ const buildSlick = (props) => {
 
 // Render gift-wrap options
 const createGiftOptions = (props) => {
-  const { active } = props;
+  const { active = false } = props;
 
   if (!active) return;
 
