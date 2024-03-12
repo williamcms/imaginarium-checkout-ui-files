@@ -299,10 +299,10 @@ const renderProductShelf = (props) => {
     const hideShelf = () =>
       hideOn.every((item) => {
         if ($("body").hasClass(item)) {
-          $(_wrapperContainer).hide();
+          $(_wrapperContainer.querySelector(".shelfWrapper")).hide();
           return false;
         } else {
-          $(_wrapperContainer).show();
+          $(_wrapperContainer.querySelector(".shelfWrapper")).show();
           return true;
         }
       });
