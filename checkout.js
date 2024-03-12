@@ -295,6 +295,75 @@ const renderProductShelf = (props) => {
       console.error("There was a problem fetching the data:", error);
     });
 
+  _wrapperContainer.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("addToCartButton")) return;
+
+    const buttonElm = e.target;
+    const parentElm = buttonElm.closest(".productItem");
+
+    const name = parentElm.getAttribute("data-productName");
+    const id = parentElm.getAttribute("data-productId");
+    const price = parentElm.getAttribute("data-price");
+    const brand = parentElm.getAttribute("data-brand");
+    const category = parentElm.getAttribute("data-category");
+    const variant = parentElm.getAttribute("data-sku");
+    const seller = parentElm.getAttribute("data-sellerId");
+    const quantity = parseInt(parentElm.getAttribute("data-quantity")) ?? 1;
+
+    // Add some style to represent that the click worked
+    $(`.productItem[data-sku="${variant}"] .addToCartButton`).addClass("load");
+    $(`.productItem[data-sku="${variant}"] .addToCartButton`).text(labelButtonProccess);
+
+    // Set quantity
+    $(`.productItem[data-sku="${variant}"]`).attr("data-quantity", quantity + 1);
+
+    // Push dataLayer event
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "addToCart",
+      eventCategory: "enhanced-ecommerce",
+      eventAction: "addToCart",
+      ecommerce: {
+        add: {
+          products: [
+            {
+              name,
+              id,
+              price,
+              brand,
+              category,
+              variant,
+              quantity,
+              list: listName,
+            },
+          ],
+        },
+      },
+    });
+
+    // vtexjs.checkout.addToCart(items, expectedOrderFormSections, salesChannel)
+    vtexjs.checkout
+      .addToCart(
+        [
+          {
+            id: variant,
+            quantity,
+            seller,
+          },
+        ],
+        null,
+        1
+      )
+      .done(() => {
+        // Execute action on all elements because the addToCart checkout
+        // function triggers 'done' only after all click actions are completed
+        // and the products are added to the minicart
+        $(".addToCartButton.load").text(labelButtonAfter);
+        $(".addToCartButton.load").addClass("added");
+        $(".addToCartButton").removeClass("load");
+      });
+  });
+
   if (hideOn.length) {
     const hideShelf = () =>
       hideOn.every((item) => {
@@ -750,71 +819,6 @@ const createGiftOptions = (props) => {
     }
   });
 };
-
-$(document).on("click", ".productItem[data-sku] .addToCartButton", (e) => {
-  const elm = $(e.target);
-
-  const name = elm.attr("data-productName");
-  const id = elm.attr("data-productId");
-  const price = elm.attr("data-price");
-  const brand = elm.attr("data-brand");
-  const category = elm.attr("data-category");
-  const variant = elm.attr("data-sku");
-  const seller = elm.attr("data-sellerId");
-  const quantity = parseInt(elm.attr("data-quantity")) ?? 1;
-
-  // Add some style to represent that the click worked
-  $(`.productItem[data-sku="${variant}"] .addToCartButton`).addClass("load");
-  $(`.productItem[data-sku="${variant}"] .addToCartButton`).text(labelButtonProccess);
-
-  // Set quantity
-  $(`.productItem[data-sku="${variant}"]`).attr("data-quantity", quantity + 1);
-
-  // Push dataLayer event
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "addToCart",
-    eventCategory: "enhanced-ecommerce",
-    eventAction: "addToCart",
-    ecommerce: {
-      add: {
-        products: [
-          {
-            name,
-            id,
-            price,
-            brand,
-            category,
-            variant,
-            quantity,
-          },
-        ],
-      },
-    },
-  });
-
-  // vtexjs.checkout.addToCart(items, expectedOrderFormSections, salesChannel)
-  vtexjs.checkout
-    .addToCart(
-      [
-        {
-          id,
-          quantity: 1,
-          seller,
-        },
-      ],
-      null,
-      1
-    )
-    .done(() => {
-      // Execute action on all elements because the addToCart checkout
-      // function triggers 'done' only after all click actions are completed
-      // and the products are added to the minicart
-      $(".addToCartButton.load").text(labelButtonAfter);
-      $(".addToCartButton.load").addClass("added");
-      $(".addToCartButton").removeClass("load");
-    });
-});
 
 // Hide invisible payment methods
 window.addEventListener("load", () => {
