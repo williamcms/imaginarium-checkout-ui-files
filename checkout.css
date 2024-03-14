@@ -185,23 +185,82 @@
 .footer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
-  justify-content: center;
 }
 
 .footer .footer-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
+  gap: 1rem;
+  background-color: #000000;
+  max-width: 100%;
   padding: 32px;
 }
 
 @media screen and (max-width: 768px) {
   .footer .footer-content {
-    display: block;
-    padding: 0;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
   }
+}
+
+.footer .footer-content .payment-methods,
+.footer .footer-content .security-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.footer .footer-content .payment-methods .payment-methods--title p,
+.footer .footer-content .security-badges .security-badges--title p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-content .payment-methods .payment-methods--items,
+.footer .footer-content .security-badges .security-badges--items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer .footer-content .payment-methods .payment-methods--disclaimer p,
+.footer .footer-content .security-badges .security-badges--disclaimer p {
+  font-size: 0.8125rem;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-disclaimer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .footer .footer-disclaimer {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
+
+.footer .footer-disclaimer--warning p,
+.footer .footer-disclaimer--trademark p {
+  font-size: 0.8125rem;
+  color: #4d4d44;
+  margin: 0;
+  padding: 0;
 }
 
 /* Styles for checkout content */
