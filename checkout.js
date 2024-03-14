@@ -364,7 +364,7 @@ const renderProductShelf = (props) => {
       .addToCart(
         [
           {
-            id: variant,
+            id,
             quantity,
             seller,
           },
