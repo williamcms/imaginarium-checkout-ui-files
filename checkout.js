@@ -85,7 +85,7 @@ const slickProps = {
 
 // Gift Config
 const giftProps = {
-  active: true,
+  active: false,
 };
 
 // Initializers
