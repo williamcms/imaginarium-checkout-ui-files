@@ -102,7 +102,7 @@ window.addEventListener("load", () => {
   renderProductShelf({
     ...shelfProps,
     active: true,
-    wrapperClass: ".e-footer > .shelfContainer",
+    wrapperClass: ".footer > .shelfContainer",
     collectionId: "1437",
     shelfTitle: "Conheça os mascotinhos",
     listName: "shelf-bottom-checkout",
@@ -110,7 +110,7 @@ window.addEventListener("load", () => {
 
   // List elements to initialize slick-carousel
   buildSlick({ ...slickProps, active: true, wrapperClass: ".e-header .productListage[data-collection]" });
-  buildSlick({ ...slickProps, active: true, wrapperClass: ".e-footer .productListage[data-collection]" });
+  buildSlick({ ...slickProps, active: true, wrapperClass: ".footer .productListage[data-collection]" });
 
   // Initialize gift-wrap
   createGiftOptions(giftProps);
