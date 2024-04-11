@@ -599,7 +599,7 @@ const createGiftOptions = (props) => {
 
                       <div class="form-group">
                         <div class="input-group gift-message-inputMessage">
-                            <textarea maxlength="400" rows="8" name="gift-message-inputMessage" placeholder="Aproveite seu presente!" required>Aproveite seu presente!</textarea>
+                            <textarea maxlength="400" rows="7" name="gift-message-inputMessage" placeholder="Aproveite seu presente!" required>Aproveite seu presente!</textarea>
                         </div>
 
                         <div class="input-group gift-message-inputTo">
