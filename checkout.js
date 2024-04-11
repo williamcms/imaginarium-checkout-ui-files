@@ -556,7 +556,7 @@ const createGiftOptions = (props) => {
                 </div>
 
                 <div class="overlay-content-main">
-                  <div class="gift-options">
+                  <div class="gift-options" style="display:none;">
                     <div class="gift-options-text">
                       Deseja enviar o presente embalado?
                     </div>
@@ -575,6 +575,8 @@ const createGiftOptions = (props) => {
 
                     <div class="gift-options-disclaimer">*Se optar pela opção "Não, deixa comigo", as sacolas de presente virão dobradas no pedido para você embrulhar na sua casa.</div>
                   </div>
+
+                  <div class="gift-disclaimer"><strong>As opções de embalagem de presente estão apenas disponíveis para produtos fornecidos e entregues pela marca imaginarium.</strong></div>
 
                   <div class="overlay-content-separator"></div>
 

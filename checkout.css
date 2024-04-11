@@ -658,6 +658,10 @@ span.btn-text {
   text-align: start;
 }
 
+.gift-template-overlay > .gift-template-overlay-content .gift-disclaimer {
+  text-align: center;
+}
+
 .gift-template-overlay > .gift-template-overlay-content .overlay-content-separator {
   height: 0.0625rem;
   background-color: #e8e8e8;
