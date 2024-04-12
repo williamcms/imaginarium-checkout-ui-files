@@ -489,6 +489,77 @@
   background-color: #7841be;
 }
 
+/* Tooltip */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.125rem;
+  overflow: visible;
+}
+
+.tooltip-wrapper .trigger {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #808080;
+  border-radius: 12.5rem;
+  padding: 0 0.25rem;
+}
+
+.tooltip-wrapper .text::before {
+  content: "";
+  position: absolute;
+  top: -0.625rem;
+  right: 13%;
+  width: 1.625rem;
+  height: 1.625rem;
+  background-color: #c2e9ff;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+@media (max-width: 490px) {
+  .tooltip-wrapper .text::before {
+    top: unset;
+    bottom: -0.625rem;
+  }
+}
+
+.tooltip-wrapper .text {
+  font-size: 0.75rem;
+  background-color: #c2e9ff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 490px) {
+  .tooltip-wrapper .text {
+    font-size: 0.6875rem;
+  }
+}
+
+.tooltip-wrapper:hover > .text {
+  clip: auto;
+  overflow: auto;
+  white-space: normal;
+
+  top: 2.25rem;
+  width: max-content;
+  max-width: min(90vw, 22rem);
+  height: auto;
+  transform: translateX(-85%);
+  overflow: visible;
+  z-index: 1;
+}
+
+@media (max-width: 490px) {
+  .tooltip-wrapper:hover > .text {
+    top: unset;
+    bottom: 2.25rem;
+  }
+}
+
 /* Opções de Presente - Overlay */
 body.js-vcustom-showNoteField .orderform-template .summary-note {
   display: none !important;
@@ -556,6 +627,17 @@ span.btn-text {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
+}
+
+.gift-template-overlay > .gift-template-overlay-content .gift-subtitle {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+@media (max-width: 490px) {
+  .gift-template-overlay > .gift-template-overlay-content .gift-subtitle {
+    padding: 0;
+  }
 }
 
 .gift-template-overlay > .gift-template-overlay-content .close-overlay {
@@ -797,7 +879,6 @@ span.btn-text {
 .summary-template-holder {
   background-color: transparent;
   padding: 0;
-  overflow: hidden;
 }
 
 .gift-template-holder {
@@ -811,6 +892,16 @@ span.btn-text {
 
 .fake-submit-wrap .icon-lock {
   margin-right: 0.3125rem;
+}
+
+.gift-template-holder .gift-disclaimer {
+  text-align: center;
+  margin-top: 0.75rem;
+  padding: 0 0.375rem;
+}
+
+.gift-template-holder .gift-disclaimer.small {
+  font-size: 0.6875rem;
 }
 
 .gift-selected-holder,

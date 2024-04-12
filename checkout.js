@@ -556,6 +556,10 @@ const createGiftOptions = (props) => {
                 </div>
 
                 <div class="overlay-content-main">
+                  <div class="gift-subtitle">
+                    <p>Que tal mandar um presente com uma embalagem e um cartão todo especial?</p>
+                  </div>
+
                   <div class="gift-options" style="display:none;">
                     <div class="gift-options-text">
                       Deseja enviar o presente embalado?
@@ -575,8 +579,6 @@ const createGiftOptions = (props) => {
 
                     <div class="gift-options-disclaimer">*Se optar pela opção "Não, deixa comigo", as sacolas de presente virão dobradas no pedido para você embrulhar na sua casa.</div>
                   </div>
-
-                  <div class="gift-disclaimer"><strong>As opções de embalagem de presente estão apenas disponíveis para produtos fornecidos e entregues pela marca imaginarium.</strong></div>
 
                   <div class="overlay-content-separator"></div>
 
@@ -609,6 +611,18 @@ const createGiftOptions = (props) => {
                       </div>
                     </div>
                   </div>
+
+                  <div class="gift-disclaimer">
+                    <p>
+                      <span>As opções de embalagem de presente estão apenas disponíveis para produtos fornecidos e entregues pela marca <strong>imaginarium</strong></span>
+
+                      <span class="tooltip-wrapper">
+                        <span class="trigger" aria-hidden="true">?</span>
+                        <span class="text sr-only">Ao comprar um produto vendido e/ou entregue por outra marca, observe que, mesmo que seja combinado com outros produtos válidos, <strong>apenas os produtos da marca imaginarium serão enviados como presente</strong>. Este benefício é exclusivo dos produtos da Imaginarium.</span>
+                      </span>
+                    </p>
+                  </div>
+
                 </div>
 
                 <div class="cart-links">
@@ -760,6 +774,17 @@ const createGiftOptions = (props) => {
                     <span class="btn-text">Esse pedido é um presente?</span>
                 </button>
             </div>
+          </div>
+
+          <div class="gift-disclaimer small">
+            <p>
+              <span>As opções de embalagem de presente estão apenas disponíveis para produtos fornecidos e entregues pela marca <strong>imaginarium</strong></span>
+
+              <span class="tooltip-wrapper">
+                <span class="trigger" aria-hidden="true">?</span>
+                <span class="text sr-only">Ao comprar um produto vendido e/ou entregue por outra marca, observe que, mesmo que seja combinado com outros produtos válidos, <strong>apenas os produtos da marca imaginarium serão enviados como presente</strong>. Este benefício é exclusivo dos produtos da Imaginarium.</span>
+              </span>
+            </p>
           </div>
         `;
 
