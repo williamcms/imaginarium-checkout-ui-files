@@ -992,16 +992,19 @@ span.btn-text {
 
 .summary-template-holder > .cart-links {
   padding-top: 0;
+  border-radius: 0 0 0.625rem 0.625rem;
 }
 
 @media (max-width: 490px) {
   .gift-trigger-holder,
   .summary-template-holder > .summary {
     padding: 1rem;
+    border-radius: 0.625rem;
   }
 
   .summary-template-holder > .cart-links {
     padding: 0;
+    border-radius: 0;
   }
 
   .summary-template-holder .cart-links-bottom .btn-success {
