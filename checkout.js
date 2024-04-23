@@ -521,6 +521,14 @@ const createGiftOptions = (props) => {
       `;
   };
 
+  const removeEmojis = (text) => {
+    const EmojiRegex =
+      /(?![*#0-9]+)[\p{Emoji}\p{Emoji_Modifier}\p{Emoji_Component}\p{Emoji_Modifier_Base}\p{Emoji_Presentation}]/gu;
+    const filteredText = String(text).replace(EmojiRegex, "");
+
+    return filteredText;
+  };
+
   // Alternate between trigger & selected layouts
   const handleLayoutAlternation = (elm) => {
     const cartNoteValue = $("#cart-note").val();
@@ -679,6 +687,14 @@ const createGiftOptions = (props) => {
           field.parents(".input-group").removeClass("warning");
         }
       });
+
+      // Prevent Emoji
+      field.on("mouseleave change keyup", (e) => {
+        const $this = $(e.target);
+        const value = $this.val();
+
+        $this.val(removeEmojis(value));
+      });
     });
 
     $(tempElement.querySelector("textarea")).on("keyup", (e) => {
@@ -712,7 +728,7 @@ const createGiftOptions = (props) => {
         gift,
         giftFrom,
         giftTo,
-        giftMessage,
+        giftMessage: removeEmojis(giftMessage),
       };
 
       if (validity) {
