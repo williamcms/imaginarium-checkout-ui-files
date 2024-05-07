@@ -95,9 +95,9 @@ window.addEventListener("load", () => {
     ...shelfProps,
     active: true,
     wrapperClass: ".e-header > .shelfContainer",
-    collectionId: "1318",
-    shelfTitle: "Que tal completar o seu carrinho?",
-    listName: "shelf-bottom-checkout",
+    collectionId: "1462",
+    shelfTitle: "Que tal complementar o presente?",
+    listName: "shelf-top-checkout",
   });
   renderProductShelf({
     ...shelfProps,
