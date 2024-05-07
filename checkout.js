@@ -492,6 +492,10 @@ const createGiftOptions = (props) => {
 
   if (!active) return;
 
+  const MAX_CHAR_INPUT = 100;
+
+  const MAX_CHAR_TEXTAREA = 400;
+
   const elmToAppend =
     window.location.hash === "#/cart" ? ".cart-template > .summary-template-holder" : ".cart-template > .cart-fixed";
 
@@ -594,8 +598,7 @@ const createGiftOptions = (props) => {
                     <div class="form-group">
                       <div class="input-group gift-message-inputFrom">
                         <label for="gift-message-inputFrom">De</label>
-                        <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom" 
-                          required />
+                        <input type="text" name="gift-message-inputFrom" id="gift-message-inputFrom" maxlength="${MAX_CHAR_INPUT}" required />
                       </div>
                     </div>
 
@@ -603,18 +606,18 @@ const createGiftOptions = (props) => {
                       <div class="gift-message-info">
                         <div class="gift-message-title">Mensagem de presente</div>
                         <div class="gift-message-details">
-                          <span class="char-count">400</span> caracteres
+                          <span class="char-count">${MAX_CHAR_TEXTAREA}</span> caracteres
                         </div>
                       </div>
 
                       <div class="form-group">
                         <div class="input-group gift-message-inputMessage">
-                            <textarea maxlength="400" rows="7" name="gift-message-inputMessage" placeholder="Aproveite seu presente!" required>Aproveite seu presente!</textarea>
+                            <textarea maxlength="${MAX_CHAR_TEXTAREA}" rows="7" name="gift-message-inputMessage" placeholder="Aproveite seu presente!" required>Aproveite seu presente!</textarea>
                         </div>
 
                         <div class="input-group gift-message-inputTo">
                           <label for="gift-message-inputTo">Para</label>
-                          <input type="text" name="gift-message-inputTo" id="gift-message-inputTo" required />
+                          <input type="text" name="gift-message-inputTo" id="gift-message-inputTo" maxlength="${MAX_CHAR_INPUT}" required />
                         </div>
                       </div>
                     </div>
