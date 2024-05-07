@@ -495,6 +495,7 @@ const createGiftOptions = (props) => {
   const MAX_CHAR_INPUT = 100;
 
   const MAX_CHAR_TEXTAREA = 400;
+  const TEXTAREA_TO_TRACK_CHAR = ["gift-message-inputMessage"];
 
   const elmToAppend =
     window.location.hash === "#/cart" ? ".cart-template > .summary-template-holder" : ".cart-template > .cart-fixed";
@@ -691,23 +692,21 @@ const createGiftOptions = (props) => {
         }
       });
 
-      // Prevent Emoji
       field.on("mouseleave change keyup", (e) => {
-        const $this = $(e.target);
-        const value = $this.val();
+        const $this = e.target;
+        const value = $this.value;
 
-        $this.val(removeEmojis(value));
+        // Prevent Emoji
+        $this.value = removeEmojis(value);
+
+        // Track char count on textarea
+        if (TEXTAREA_TO_TRACK_CHAR.includes(item.getAttribute("name"))) {
+          const _charCount = tempElement.querySelector(".gift-message-info .char-count");
+          const _value = $this.value;
+
+          _charCount.textContent = MAX_CHAR_TEXTAREA - _value.length;
+        }
       });
-    });
-
-    $(tempElement.querySelector("textarea")).on("keyup", (e) => {
-      const MAX_CHAR = 400;
-
-      const dataMessage = $(e.target).val();
-
-      const _char = $(tempElement.querySelector(".gift-message-info .char-count"));
-
-      _char.text(MAX_CHAR - dataMessage.length);
     });
 
     // Save behavior
