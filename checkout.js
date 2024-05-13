@@ -160,6 +160,27 @@ const createElement = (tag, attributes, children) => {
   return elm;
 };
 
+// Wait for the specified element to finish loading before proceeding
+// waitForElm('.selector').then((elm) =>{});
+const waitForElm = (selector) => {
+  return new Promise((resolve) => {
+    const checkElement = () => {
+      const elm = document.querySelector(selector);
+      if (elm) {
+        resolve(elm);
+      } else {
+        requestAnimationFrame(checkElement);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      checkElement();
+    } else {
+      window.addEventListener("DOMContentLoaded", checkElement);
+    }
+  });
+};
+
 // Fetch data and render the product shelf
 const renderProductShelf = (props) => {
   const {
@@ -881,6 +902,17 @@ const createGiftOptions = (props) => {
       setTimeout(() => fakeButtonHolder.html(fakeButton(currentPhase)), 500);
     }
   });
+};
+
+// Fixes zip code issues since there is currently no indication of a platform fix
+waitForElm("#ship-postalCode").then((elm) => FixZipCode(elm));
+
+const FixZipCode = (zipCodeInput) => {
+  if (zipCodeInput.getAttribute("autocomplete") !== "off") {
+    zipCodeInput.setAttribute("autocomplete", "off");
+  }
+
+  zipCodeInput.addEventListener("paste", (e) => e.preventDefault());
 };
 
 // Hide invisible payment methods
