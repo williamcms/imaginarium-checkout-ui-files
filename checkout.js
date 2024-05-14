@@ -905,14 +905,6 @@ const createGiftOptions = (props) => {
 };
 
 // Fixes zip code issues since there is currently no indication of a platform fix
-const handleZipCodeElm = () => waitForElm("#ship-postalCode").then((elm) => FixZipCode(elm));
-
-handleZipCodeElm();
-
-$(document).on("click", "#shipping-preview-container", () => handleZipCodeElm());
-
-$(document).on("click", ".shipping-container", () => handleZipCodeElm());
-
 const FixZipCode = (zipCodeInput) => {
   if (zipCodeInput.getAttribute("autocomplete") !== "off") {
     zipCodeInput.setAttribute("autocomplete", "off");
@@ -920,6 +912,14 @@ const FixZipCode = (zipCodeInput) => {
 
   zipCodeInput.addEventListener("paste", (e) => e.preventDefault());
 };
+
+const handleZipCodeElm = () => waitForElm("#ship-postalCode").then((elm) => FixZipCode(elm));
+
+handleZipCodeElm();
+
+$(document).on("click", "#shipping-preview-container", () => handleZipCodeElm());
+
+$(document).on("click", ".shipping-container", () => handleZipCodeElm());
 
 // Hide invisible payment methods
 window.addEventListener("load", () => {
