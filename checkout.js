@@ -166,6 +166,7 @@ const waitForElm = (selector) => {
   return new Promise((resolve) => {
     const checkElement = () => {
       const elm = document.querySelector(selector);
+
       if (elm) {
         resolve(elm);
       } else {
@@ -913,7 +914,16 @@ const FixZipCode = (zipCodeInput) => {
   zipCodeInput.addEventListener("paste", (e) => e.preventDefault());
 };
 
-const handleZipCodeElm = () => waitForElm("#ship-postalCode").then((elm) => FixZipCode(elm));
+const handleZipCodeDuplicates = (elm) => {
+  const id = elm.getAttribute("id");
+  const allElements = document.querySelectorAll(`[id=${id}]`);
+
+  allElements.forEach((item) => {
+    FixZipCode(item);
+  });
+};
+
+const handleZipCodeElm = () => waitForElm("#ship-postalCode").then((elm) => handleZipCodeDuplicates(elm));
 
 handleZipCodeElm();
 
