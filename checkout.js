@@ -905,7 +905,11 @@ const createGiftOptions = (props) => {
 };
 
 // Fixes zip code issues since there is currently no indication of a platform fix
-waitForElm("#ship-postalCode").then((elm) => FixZipCode(elm));
+const handleZipCodeElm = () => waitForElm("#ship-postalCode").then((elm) => FixZipCode(elm));
+
+handleZipCodeElm();
+
+$(document).on("click", "#shipping-preview-container", () => handleZipCodeElm());
 
 const FixZipCode = (zipCodeInput) => {
   if (zipCodeInput.getAttribute("autocomplete") !== "off") {
