@@ -911,6 +911,8 @@ handleZipCodeElm();
 
 $(document).on("click", "#shipping-preview-container", () => handleZipCodeElm());
 
+$(document).on("click", ".shipping-container", () => handleZipCodeElm());
+
 const FixZipCode = (zipCodeInput) => {
   if (zipCodeInput.getAttribute("autocomplete") !== "off") {
     zipCodeInput.setAttribute("autocomplete", "off");
