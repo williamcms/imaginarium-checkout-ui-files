@@ -103,8 +103,8 @@ window.addEventListener("load", () => {
     ...shelfProps,
     active: true,
     wrapperClass: ".footer > .shelfContainer",
-    collectionId: "1437",
-    shelfTitle: "Conheça os mascotinhos",
+    collectionId: "1318",
+    shelfTitle: "Pra dar um UP no presente",
     listName: "shelf-bottom-checkout",
   });
 
