@@ -1497,37 +1497,3 @@ const generateCashbackIcon = () => {
   $(".gift-card-provider-group-ocksaas tbody tr:eq(1)").prepend(icon);
   $(".partialValue").parent().prepend(columns);
 };
-
-$(document).ready(function () {
-  let hasCalledSendAttachment = false
-  let previousLogisticsInfo = null
-
-  // timeout adicionado p/ esperar a dom carregar
-  // e captar o order form
-  const timeout = setTimeout(() => {
-    $(window).on('orderFormUpdated.vtex', (_, orderForm) => {
-      const newOrderFormPostalCode = orderForm?.shippingData?.address?.postalCode
-      const marketingData = orderForm.marketingData
-      const newLogisticsInfo = orderForm?.shippingData?.logisticsInfo?.[0]
-
-      if (newLogisticsInfo && JSON.stringify(newLogisticsInfo) !== JSON.stringify(previousLogisticsInfo)) {
-        previousLogisticsInfo = newLogisticsInfo
-
-        if (newOrderFormPostalCode && !hasCalledSendAttachment) {
-          vtexjs.checkout
-            .sendAttachment('marketingData', marketingData)
-            .done(() => {
-              hasCalledSendAttachment = true
-            })
-            .fail((error) => {
-              console.error('Erro ao chamar sendAttachment:', error)
-            })
-        }
-      }
-
-      return
-    })
-
-    clearTimeout(timeout)
-  }, 1500)
-})
