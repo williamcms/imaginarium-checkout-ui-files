@@ -1714,4 +1714,8 @@ span[data-bind*="text: availableLabel"] {
   .cart-more-options #shipping-preview-container {
       display: block !important;
   }
+
+  .cart-more-options .cart-select-gift-placeholder:empty {
+    display: none !important;
+  }
 }
