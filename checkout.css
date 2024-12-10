@@ -1719,3 +1719,32 @@ span[data-bind*="text: availableLabel"] {
     display: none !important;
   }
 }
+
+
+#shipping-option-delivery,
+#shipping-option-pickup-in-point {
+  font-size: 0;
+}
+
+#shipping-option-delivery::before {
+  content: 'Receber em Casa';
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  outline: none;
+  color: #666;
+}
+
+#shipping-option-pickup-in-point::before {
+  content: 'Retirar em Loja';
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  outline: none;
+  color: #666;
+}
+
+#shipping-option-delivery.shp-method-option-active::before,
+#shipping-option-pickup-in-point.shp-method-option-active::before {
+  color: #fff;
+}
